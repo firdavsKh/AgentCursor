@@ -214,7 +214,7 @@ def infer_measure_columns(
     header_map: dict[str, int],
     ws: Any,
     config_value_cols: dict[str, str | dict[str, str]] | None,
-) -> dict[str, int]:
+) -> tuple[dict[str, int], str, str]:
     excluded = {
         "item_code",
         "code",
@@ -262,20 +262,38 @@ def infer_measure_columns(
         # Validate config columns against actual workbook shape. Some configs map
         # legacy templates where column letters no longer match extracted files.
         validated: dict[str, int] = {}
+        rejection_reasons: list[str] = []
         index_to_header = {
             idx: header for header, idx in header_map.items()
         }
         for measure_name, col_index in resolved.items():
             if col_index > ws.max_column:
+                rejection_reasons.append(
+                    f"{measure_name}: column index {col_index} is out of range"
+                )
                 continue
             header_name = index_to_header.get(col_index, "")
             if header_name in excluded:
+                rejection_reasons.append(
+                    f"{measure_name}: mapped to excluded header '{header_name}'"
+                )
                 continue
-            if numeric_count_for_column(col_index) < 3:
+            numeric_count = numeric_count_for_column(col_index)
+            if numeric_count < 3:
+                rejection_reasons.append(
+                    f"{measure_name}: column {col_index} has only {numeric_count} numeric rows"
+                )
                 continue
             validated[measure_name] = col_index
         if validated:
-            return validated
+            return validated, "config", ""
+        fallback_reason = (
+            "; ".join(rejection_reasons)
+            if rejection_reasons
+            else "configured value_cols are missing or invalid for workbook shape"
+        )
+    else:
+        fallback_reason = ""
 
     numeric_candidates: dict[str, int] = {}
     for header, col_index in header_map.items():
@@ -284,7 +302,9 @@ def infer_measure_columns(
         numeric_count = numeric_count_for_column(col_index)
         if numeric_count >= 3:
             numeric_candidates[header] = col_index
-    return numeric_candidates
+    if config_value_cols:
+        return numeric_candidates, "fallback", fallback_reason
+    return numeric_candidates, "inferred", ""
 
 
 @dataclass
@@ -401,6 +421,7 @@ def main() -> int:
     category_key_lookup: dict[tuple[int, str], str] = {}
 
     fact_rows: list[dict[str, Any]] = []
+    fallback_rows: list[dict[str, Any]] = []
     period_bucket_seen: dict[tuple[int, str], dict[str, Any]] = {}
     type_last_seen: dict[tuple[int, str, str], dict[str, Any]] = {}
 
@@ -473,7 +494,32 @@ def main() -> int:
 
         cfg = config_by_pb.get(pb_table, {})
         cfg_value_cols = (cfg.get("columns", {}) or {}).get("value_cols")
-        measure_cols = infer_measure_columns(header_map, ws, cfg_value_cols)
+        measure_cols, measure_strategy, fallback_reason = infer_measure_columns(
+            header_map, ws, cfg_value_cols
+        )
+        if measure_strategy == "fallback":
+            configured_names = (
+                ",".join(sorted(cfg_value_cols.keys()))
+                if isinstance(cfg_value_cols, dict)
+                else ""
+            )
+            inferred_names = ",".join(sorted(measure_cols.keys()))
+            message = (
+                "WARN: fallback to inferred measure columns for "
+                f"{file_path.name} (PB{pb_table}). "
+                f"configured=[{configured_names}] inferred=[{inferred_names}]"
+            )
+            print(message)
+            fallback_rows.append(
+                {
+                    "pb_table": pb_table,
+                    "source_file": file_path.name,
+                    "source_sheet": wb.sheetnames[0],
+                    "configured_measures": configured_names,
+                    "inferred_measures": inferred_names,
+                    "reason": fallback_reason,
+                }
+            )
         if not measure_cols:
             continue
 
@@ -841,6 +887,7 @@ def main() -> int:
         )
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    logs_dir.mkdir(parents=True, exist_ok=True)
 
     write_csv(
         output_dir / "dim_table.csv",
@@ -964,6 +1011,18 @@ def main() -> int:
             "last_seen_file",
         ],
     )
+    write_csv(
+        logs_dir / "measure_column_fallbacks.csv",
+        fallback_rows,
+        [
+            "pb_table",
+            "source_file",
+            "source_sheet",
+            "configured_measures",
+            "inferred_measures",
+            "reason",
+        ],
+    )
 
     summary = {
         "files_processed": len([f for f in workbook_files if f.stat().st_size > 0]),
@@ -972,6 +1031,7 @@ def main() -> int:
         "period_rows": len(dim_report_period),
         "measure_types": len(dim_measure_type),
         "data_scopes": len(dim_data_scope),
+        "measure_column_fallbacks": len(fallback_rows),
     }
     (output_dir / "run_summary.json").write_text(
         json.dumps(summary, indent=2), encoding="utf-8"

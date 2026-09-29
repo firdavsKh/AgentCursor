@@ -23,6 +23,8 @@ Generated outputs include:
 - `ref_dim_category_last_seen.csv`
 - `ref_dim_period_bucket_last_seen.csv`
 - `ref_dim_type_last_seen.csv`
+- `_logs/measure_column_fallbacks.csv` (files where config value columns were
+  rejected and inferred numeric columns were used instead)
 
 Notes:
 
