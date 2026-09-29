@@ -11,6 +11,21 @@ python3 scripts/prepare_model_pieces.py \
   --output-dir prepared_model
 ```
 
+PowerShell equivalent:
+
+```powershell
+python .\scripts\prepare_model_pieces.py `
+  --output-rar .\output_files.rar `
+  --config-rar .\report_configs.rar `
+  --output-dir .\prepared_model
+```
+
+Single-line variant (works in any shell):
+
+```bash
+python3 scripts/prepare_model_pieces.py --output-rar output_files.rar --config-rar report_configs.rar --output-dir prepared_model
+```
+
 Generated outputs include:
 
 - `fact_rows_long.csv` (normalized long fact rows)
