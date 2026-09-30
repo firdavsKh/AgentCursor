@@ -48,3 +48,26 @@ Notes:
 - Some archive entries may fail extraction (RAR method support); the script
   continues with all successfully extracted files and logs extraction output
   into `<output-dir>/_logs/`.
+
+## Visualize prepared model outputs
+
+Generate a static HTML dashboard from `prepared_model`:
+
+```bash
+python3 scripts/visualize_model_pieces.py \
+  --model-dir prepared_model \
+  --output-dir prepared_model/visualizations
+```
+
+PowerShell:
+
+```powershell
+python .\scripts\visualize_model_pieces.py `
+  --model-dir .\prepared_model `
+  --output-dir .\prepared_model\visualizations
+```
+
+Visualization outputs:
+
+- `visualizations/index.html` (dashboard)
+- `visualizations/dashboard_data.json` (aggregated chart data)
