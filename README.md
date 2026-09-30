@@ -80,7 +80,13 @@ Install dependencies:
 python3 -m pip install --upgrade marimo pandas plotly
 ```
 
-Run marimo app:
+**Starter (load all prepared CSVs):**
+
+```powershell
+python -m marimo edit .\apps\pb_load_all_marimo.py
+```
+
+**Skeleton charts only:**
 
 ```bash
 marimo run apps/pb_skeleton_marimo.py
@@ -89,7 +95,10 @@ marimo run apps/pb_skeleton_marimo.py
 PowerShell:
 
 ```powershell
+python -m marimo edit .\apps\pb_skeleton_marimo.py
+# or app view:
 python -m marimo run .\apps\pb_skeleton_marimo.py
 ```
 
-The app visualizes top-level (`hierarchy_level == 1`) PB categories only.
+Use `edit` for the full Marimo toolkit; `run` is the published app view.
+The skeleton app visualizes top-level (`hierarchy_level == 1`) PB categories only.
