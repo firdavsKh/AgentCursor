@@ -71,3 +71,25 @@ Visualization outputs:
 
 - `visualizations/index.html` (dashboard)
 - `visualizations/dashboard_data.json` (aggregated chart data)
+
+## Run marimo app (PB skeleton level)
+
+Install dependencies:
+
+```bash
+python3 -m pip install --upgrade marimo pandas plotly
+```
+
+Run marimo app:
+
+```bash
+marimo run apps/pb_skeleton_marimo.py
+```
+
+PowerShell:
+
+```powershell
+python -m marimo run .\apps\pb_skeleton_marimo.py
+```
+
+The app visualizes top-level (`hierarchy_level == 1`) PB categories only.
