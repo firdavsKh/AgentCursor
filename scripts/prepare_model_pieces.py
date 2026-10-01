@@ -33,6 +33,55 @@ PERIOD_BUCKETS = {
 }
 
 
+def enforce_current_year_for_sparse_periods(
+    fact_rows: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Force current_year when period exists without a current/prevent pair.
+
+    Rule:
+    - detect tables that have at least one non-empty period_bucket
+    - if a table does not contain both current_year and prevent_year buckets,
+      then all its non-empty period buckets are normalized to current_year
+      and corresponding measure_type_key is also normalized to current_year
+    """
+
+    buckets_by_table: dict[int, set[str]] = defaultdict(set)
+    for row in fact_rows:
+        period_bucket = str(row.get("period_bucket") or "").strip()
+        if not period_bucket:
+            continue
+        pb_table = int(row.get("pb_table") or 0)
+        buckets_by_table[pb_table].add(period_bucket)
+
+    enforced_rows: list[dict[str, Any]] = []
+    enforce_tables: set[int] = set()
+    required_pair = {"current_year", "prevent_year"}
+
+    for pb_table in sorted(buckets_by_table):
+        buckets = buckets_by_table[pb_table]
+        if buckets and not required_pair.issubset(buckets):
+            enforce_tables.add(pb_table)
+            enforced_rows.append(
+                {
+                    "pb_table": pb_table,
+                    "original_period_buckets": ",".join(sorted(buckets)),
+                    "enforced_period_bucket": "current_year",
+                }
+            )
+
+    if not enforce_tables:
+        return enforced_rows
+
+    for row in fact_rows:
+        pb_table = int(row.get("pb_table") or 0)
+        period_bucket = str(row.get("period_bucket") or "").strip()
+        if pb_table in enforce_tables and period_bucket:
+            row["period_bucket"] = "current_year"
+            row["measure_type_key"] = "current_year"
+
+    return enforced_rows
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Extract PB archives and prepare fact/dimension model pieces."
@@ -422,8 +471,7 @@ def main() -> int:
 
     fact_rows: list[dict[str, Any]] = []
     fallback_rows: list[dict[str, Any]] = []
-    period_bucket_seen: dict[tuple[int, str], dict[str, Any]] = {}
-    type_last_seen: dict[tuple[int, str, str], dict[str, Any]] = {}
+    data_type_last_seen: dict[tuple[int, str, str], dict[str, Any]] = {}
 
     for pb_table in range(1, 33):
         dim_table[pb_table] = {
@@ -535,7 +583,7 @@ def main() -> int:
                 "label_ru": data_type.get("label_ru", ""),
                 "label_en": data_type.get("label_en", ""),
             }
-            type_last_seen[(pb_table, "data_type", scope_code)] = {
+            data_type_last_seen[(pb_table, "data_type", scope_code)] = {
                 "pb_table": pb_table,
                 "dimension_type": "data_type",
                 "category_key": scope_code,
@@ -685,32 +733,6 @@ def main() -> int:
                 ):
                     effective_measure_name = period_bucket
 
-                dim_measure_type[effective_measure_name] = {
-                    "measure_type_key": effective_measure_name,
-                    "measure_code": effective_measure_name,
-                    "measure_family": effective_measure_name,
-                }
-                current_type = type_last_seen.get(
-                    (pb_table, "value_column", effective_measure_name)
-                )
-                if (
-                    current_type is None
-                    or report_sort_key >= current_type["last_seen_sort_key"]
-                ):
-                    type_last_seen[
-                        (pb_table, "value_column", effective_measure_name)
-                    ] = {
-                        "pb_table": pb_table,
-                        "dimension_type": "value_column",
-                        "category_key": effective_measure_name,
-                        "label_tg": "",
-                        "label_ru": "",
-                        "label_en": "",
-                        "last_seen_period": report_label,
-                        "last_seen_sort_key": report_sort_key,
-                        "last_seen_file": file_path.name,
-                    }
-
                 fact_rows.append(
                     {
                         "table_key": f"PB{pb_table}",
@@ -733,27 +755,18 @@ def main() -> int:
                     }
                 )
 
-                if period_bucket in PERIOD_BUCKETS:
-                    key = (pb_table, period_bucket)
-                    existing = period_bucket_seen.get(key)
-                    if existing is None:
-                        period_bucket_seen[key] = {
-                            "pb_table": pb_table,
-                            "period_bucket": period_bucket,
-                            "first_seen_period": report_label,
-                            "first_seen_sort_key": report_sort_key,
-                            "last_seen_period": report_label,
-                            "last_seen_sort_key": report_sort_key,
-                            "seen_in_files": {file_path.name},
-                        }
-                    else:
-                        if report_sort_key < existing["first_seen_sort_key"]:
-                            existing["first_seen_sort_key"] = report_sort_key
-                            existing["first_seen_period"] = report_label
-                        if report_sort_key >= existing["last_seen_sort_key"]:
-                            existing["last_seen_sort_key"] = report_sort_key
-                            existing["last_seen_period"] = report_label
-                        existing["seen_in_files"].add(file_path.name)
+    period_enforcement_rows = enforce_current_year_for_sparse_periods(fact_rows)
+
+    # Rebuild measure dim after potential period normalization.
+    dim_measure_type = {}
+    for measure_type_key in sorted(
+        {str(row.get("measure_type_key") or "").strip() for row in fact_rows if str(row.get("measure_type_key") or "").strip()}
+    ):
+        dim_measure_type[measure_type_key] = {
+            "measure_type_key": measure_type_key,
+            "measure_code": measure_type_key,
+            "measure_family": measure_type_key,
+        }
 
     # Build dim_category_member
     dim_category_rows: list[dict[str, Any]] = []
@@ -859,6 +872,42 @@ def main() -> int:
         )
     )
 
+    period_sort_lookup = {
+        key: int(value["period_sort_key"])
+        for key, value in dim_report_period.items()
+    }
+
+    period_bucket_seen: dict[tuple[int, str], dict[str, Any]] = {}
+    for row in fact_rows:
+        period_bucket = str(row.get("period_bucket") or "").strip()
+        if period_bucket not in PERIOD_BUCKETS:
+            continue
+        pb_table = int(row.get("pb_table") or 0)
+        report_period_key = str(row.get("report_period_key") or "")
+        report_sort_key = period_sort_lookup.get(report_period_key, -1)
+        source_file = str(row.get("source_file") or "")
+        key = (pb_table, period_bucket)
+        existing = period_bucket_seen.get(key)
+        if existing is None:
+            period_bucket_seen[key] = {
+                "pb_table": pb_table,
+                "period_bucket": period_bucket,
+                "first_seen_period": report_period_key,
+                "first_seen_sort_key": report_sort_key,
+                "last_seen_period": report_period_key,
+                "last_seen_sort_key": report_sort_key,
+                "seen_in_files": {source_file} if source_file else set(),
+            }
+        else:
+            if report_sort_key < existing["first_seen_sort_key"]:
+                existing["first_seen_sort_key"] = report_sort_key
+                existing["first_seen_period"] = report_period_key
+            if report_sort_key >= existing["last_seen_sort_key"]:
+                existing["last_seen_sort_key"] = report_sort_key
+                existing["last_seen_period"] = report_period_key
+            if source_file:
+                existing["seen_in_files"].add(source_file)
+
     ref_period_rows: list[dict[str, Any]] = []
     for _, item in sorted(period_bucket_seen.items()):
         ref_period_rows.append(
@@ -871,8 +920,34 @@ def main() -> int:
             }
         )
 
+    value_type_last_seen: dict[tuple[int, str, str], dict[str, Any]] = {}
+    for row in fact_rows:
+        pb_table = int(row.get("pb_table") or 0)
+        measure_type_key = str(row.get("measure_type_key") or "").strip()
+        if not measure_type_key:
+            continue
+        report_period_key = str(row.get("report_period_key") or "")
+        report_sort_key = period_sort_lookup.get(report_period_key, -1)
+        source_file = str(row.get("source_file") or "")
+        key = (pb_table, "value_column", measure_type_key)
+        current = value_type_last_seen.get(key)
+        if current is None or report_sort_key >= current["last_seen_sort_key"]:
+            value_type_last_seen[key] = {
+                "pb_table": pb_table,
+                "dimension_type": "value_column",
+                "category_key": measure_type_key,
+                "label_tg": "",
+                "label_ru": "",
+                "label_en": "",
+                "last_seen_period": report_period_key,
+                "last_seen_sort_key": report_sort_key,
+                "last_seen_file": source_file,
+            }
+
     ref_type_rows: list[dict[str, Any]] = []
-    for _, item in sorted(type_last_seen.items()):
+    combined_type_last_seen = dict(data_type_last_seen)
+    combined_type_last_seen.update(value_type_last_seen)
+    for _, item in sorted(combined_type_last_seen.items()):
         ref_type_rows.append(
             {
                 "pb_table": item["pb_table"],
@@ -1023,6 +1098,15 @@ def main() -> int:
             "reason",
         ],
     )
+    write_csv(
+        logs_dir / "period_bucket_enforcement.csv",
+        period_enforcement_rows,
+        [
+            "pb_table",
+            "original_period_buckets",
+            "enforced_period_bucket",
+        ],
+    )
 
     summary = {
         "files_processed": len([f for f in workbook_files if f.stat().st_size > 0]),
@@ -1032,6 +1116,7 @@ def main() -> int:
         "measure_types": len(dim_measure_type),
         "data_scopes": len(dim_data_scope),
         "measure_column_fallbacks": len(fallback_rows),
+        "period_bucket_enforcements": len(period_enforcement_rows),
     }
     (output_dir / "run_summary.json").write_text(
         json.dumps(summary, indent=2), encoding="utf-8"

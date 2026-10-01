@@ -40,6 +40,9 @@ Generated outputs include:
 - `ref_dim_type_last_seen.csv`
 - `_logs/measure_column_fallbacks.csv` (files where config value columns were
   rejected and inferred numeric columns were used instead)
+- `_logs/period_bucket_enforcement.csv` (tables where period buckets were
+  normalized to `current_year` because they did not contain both
+  `current_year` and `prevent_year`)
 
 Notes:
 
