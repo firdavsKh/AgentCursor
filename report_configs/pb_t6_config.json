@@ -1,0 +1,25 @@
+{
+  "config_name": {
+    "code": "6"
+  },
+  "sheet_name": "pb",
+  "data_start_row": 11,
+  "columns": {
+    "item_name_col": "B",
+    "item_code_col": "A",
+    "data_type": ["export", "import", "surplus"],
+    "guid_col": null,
+    "year_col": null,
+    "quarter_col": null,
+    "period_col": null,
+    "value_cols": {
+      "prevent_export": { "column": "D", "data_type": "export" },
+      "prevent_import": { "column": "E", "data_type": "import" },
+      "prevent_surplus": { "column": "F", "data_type": "surplus" },
+      "current_export": { "column": "G", "data_type": "export" },
+      "current_import": { "column": "H", "data_type": "import" },
+      "current_surplus": { "column": "I", "data_type": "surplus" }
+    }
+  },
+  "rules": []
+}

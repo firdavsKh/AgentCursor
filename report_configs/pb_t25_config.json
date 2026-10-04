@@ -1,0 +1,121 @@
+{
+  "sheet_name": "pb",
+  "config_name": {
+    "name": "pb_t25_config.json",
+    "code": 25
+  },
+  "data_start_row": 11,
+  "columns": {
+    "item_code_col": "A",
+    "item_name_col": "A",
+    "value_cols": {
+      "value": "C"
+    }
+  },
+  "data_types": [
+    {
+      "name": "consolidated",
+      "label_tg": "Дар маҷмӯъ  консолид.",
+      "label_ru": "консолидированные",
+      "label_en": "Consolidated",
+      "columns": {"prev_year": "C", "curr_year": "F"}
+    },
+    {
+      "name": "cis_countries",
+      "label_tg": "кишварҳои ИДМ",
+      "label_ru": "страны СНГ",
+      "label_en": "CIS countries",
+      "columns": {"prev_year": "D", "curr_year": "G"}
+    },
+    {
+      "name": "fa_countries",
+      "label_tg": "кишварҳои ХД",
+      "label_ru": "страны ДЗ",
+      "label_en": "FA countries",
+      "columns": {"prev_year": "E", "curr_year": "H"}
+    }
+  ],
+  "rules": [
+    {
+      "code": "0",
+      "guid": 0,
+      "expected_name_tg": "ПЕРВИЧНЫЕ ДОХОДЫ",
+      "expected_name_ru": "ПЕРВИЧНЫЕ ДОХОДЫ",
+      "expected_name_en": "PRIMARY INCOME",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "0.Credit",
+      "guid": 0,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credit",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "0.Debet",
+      "guid": 0,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debet",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.",
+      "guid": 1,
+      "expected_name_tg": "Музди меҳнати кормандон",
+      "expected_name_ru": "Оплата труда работников",
+      "expected_name_en": "Compensation of employes",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.Credit",
+      "guid": 1,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credit",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.Debet",
+      "guid": 1,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debet",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.",
+      "guid": 2,
+      "expected_name_tg": "Даромади сармоягузорӣ",
+      "expected_name_ru": "Инвестиционный доход",
+      "expected_name_en": "Investment income",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.Credit",
+      "guid": 2,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credit",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.Debet",
+      "guid": 2,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debet",
+      "type": "numeric",
+      "nullable": true
+    }
+  ]
+}

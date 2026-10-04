@@ -1,0 +1,23 @@
+{
+  "config_name": {
+    "code": "30"
+  },
+  "sheet_name": "pb",
+  "data_start_row": 9,
+  "columns": {
+    "item_name_col": "C",
+    "item_code_col": "B",
+    "data_type": ["sum", "share_percent"],
+    "guid_col": null,
+    "year_col": null,
+    "quarter_col": null,
+    "period_col": null,
+    "value_cols": {
+      "prevent_sum": { "column": "E", "data_type": "sum" },
+      "prevent_share_percent": { "column": "F", "data_type": "share_percent" },
+      "current_sum": { "column": "G", "data_type": "sum" },
+      "current_share_percent": { "column": "H", "data_type": "share_percent" }
+    }
+  },
+  "rules": []
+}

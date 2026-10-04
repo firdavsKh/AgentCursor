@@ -1,0 +1,963 @@
+{
+  "sheet_name": "pb",
+  "data_start_row": 5,
+  "config_name":{
+    "name": "pb_t2_conf.json",
+    "code": 2
+  },
+  "columns": {
+    "item_code_col": "A",
+    "item_name_col": "C",
+    "value_cols": {
+      "current_year": "E",
+      "prevent_year": "D"
+    }
+  },
+  "rules": [
+    {
+        "code": "I.",
+        "guid": 1,
+        "expected_name_tg": "Ҳисоби амалиёти ҷорӣ",
+        "expected_name_ru": "Счёт текущих операций",
+        "expected_name_en": "Current account",
+        "type": "numeric",
+        "nullable": false
+    },
+    {
+        "code": "1.",
+        "guid": 2,
+        "expected_name_tg": "Молҳо ва хизматрасониҳо111",
+        "expected_name_ru": "Товары и услуги 11",
+        "expected_name_en": "Goods and services",
+        "type": "numeric",
+        "nullable": false
+    },
+    {
+        "code": "1.export",
+        "guid": 3,
+        "expected_name_tg": "Содирот",
+        "expected_name_ru": "Экспорт",
+        "expected_name_en": "export",
+        "type": "numeric",
+        "nullable": false
+    },
+    {
+        "code": "1.import",
+        "expected_name_tg": "воридот",
+        "expected_name_ru": "импорт",
+        "expected_name_en": "import",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 4
+    },
+    {
+        "code": "1.1.",
+        "expected_name_tg": "Тавозуни молҳо",
+        "expected_name_ru": "Баланс товаров",
+        "expected_name_en": "Balance of goods",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 5
+    },
+    {
+        "code": "1.1.export (FOB)",
+        "expected_name_tg": "содирот (ФОБ)",
+        "expected_name_ru": "экспорт (ФОБ)",
+        "expected_name_en": "export (FOB)",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 6
+    },
+    {
+        "code": "1.1.import (FOB)",
+        "expected_name_tg": "воридот",
+        "expected_name_ru": "импорт (в ценах ФОБ)",
+        "expected_name_en": "import (FOB)",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 7
+    },
+    {
+        "code": "1.2.",
+        "expected_name_tg": "Тавозуни хизматрасониҳо",
+        "expected_name_ru": "Баланс услуг",
+        "expected_name_en": "Balance of services",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 8
+    },
+    {
+        "code": "1.2.1.",
+        "expected_name_tg": "хизматрасонии нақлиётӣ",
+        "expected_name_ru": "транспортные услуги",
+        "expected_name_en": "freight services",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 9
+    },
+    {
+        "code": "1.2.2.",
+        "expected_name_tg": "сафарҳо",
+        "expected_name_ru": "поездки",
+        "expected_name_en": "travels",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 10
+    },
+    {
+        "code": "1.2.3.",
+        "expected_name_tg": "хизматрасонии дигар",
+        "expected_name_ru": "прочие услуги",
+        "expected_name_en": "other services",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 11
+    },
+    {
+        "code": "1.2.3.1.",
+        "expected_name_tg": "содирот",
+        "expected_name_ru": "экспорт",
+        "expected_name_en": "export",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 12
+    },
+    {
+        "code": "1.2.3.1.1.",
+        "expected_name_tg": "хизматрасонии нақлиётӣ",
+        "expected_name_ru": "транспортные услуги",
+        "expected_name_en": "freight services",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 13
+    },
+    {
+        "code": "1.2.3.1.2.",
+        "expected_name_tg": "сафарҳо",
+        "expected_name_ru": "поездки",
+        "expected_name_en": "travels",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 14
+    },
+    {
+        "code": "1.2.3.1.3.",
+        "expected_name_tg": "хизматрасонии дигар",
+        "expected_name_ru": "прочие услуги",
+        "expected_name_en": "other services",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 15
+    },
+    {
+        "code": "1.2.3.2.",
+        "expected_name_tg": "воридот",
+        "expected_name_ru": "импорт",
+        "expected_name_en": "import",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 16
+    },
+    {
+        "code": "1.2.3.2.1.",
+        "expected_name_tg": "хизматрасонии нақлиётӣ",
+        "expected_name_ru": "транспортные услуги",
+        "expected_name_en": "freight services",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 17
+    },
+    {
+        "code": "1.2.3.2.2.",
+        "expected_name_tg": "сафарҳо",
+        "expected_name_ru": "поездки",
+        "expected_name_en": "travels",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 18
+    },
+    {
+        "code": "1.2.3.2.3.",
+        "expected_name_tg": "хизматрасонии дигар",
+        "expected_name_ru": "прочие услуги",
+        "expected_name_en": "other services",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 19
+    },
+    {
+        "code": "2.",
+        "expected_name_tg": "Даромадҳои якумдараҷа",
+        "expected_name_ru": "Первичные доходы",
+        "expected_name_en": "Primary income",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 20
+    },
+    {
+        "code": "2.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 21
+    },
+    {
+        "code": "2.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 22
+    },
+    {
+        "code": "2.1.",
+        "expected_name_tg": "Музди меҳнати кормандон",
+        "expected_name_ru": "Оплата труда работников",
+        "expected_name_en": "Compensation of employees",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 23
+    },
+    {
+        "code": "2.1.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 24
+    },
+    {
+        "code": "2.1.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 25
+    },
+    {
+        "code": "2.2.",
+        "expected_name_tg": "Даромад аз сармоягузориҳо",
+        "expected_name_ru": "Доходы от инвестиций",
+        "expected_name_en": "Investments income",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 26
+    },
+    {
+        "code": "2.2.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 27
+    },
+    {
+        "code": "2.2.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 28
+    },
+    {
+        "code": "2.3.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 29
+    },
+    {
+        "code": "2.3.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 30
+    },
+    {
+        "code": "2.3.",
+        "expected_name_tg": "Даромадҳои дигари якумдараҷа",
+        "expected_name_ru": "Другие первичные доходы",
+        "expected_name_en": "Other primary income",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 31
+    },
+    {
+        "code": "3.",
+        "expected_name_tg": "Даромадҳои дуюмдараҷа",
+        "expected_name_ru": "Вторичные доходы",
+        "expected_name_en": "Secondary income",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 32
+    },
+    {
+        "code": "3.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 33
+    },
+    {
+        "code": "3.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 34
+    },
+    {
+        "code": "3.1.",
+        "expected_name_tg": "Бахши идоракунии давлатӣ",
+        "expected_name_ru": "Сектор государственного управления",
+        "expected_name_en": "General government",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 35
+    },
+    {
+        "code": "3.1.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 36
+    },
+    {
+        "code": "3.1.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 37
+    },
+    {
+        "code": "3.2.",
+        "expected_name_tg": "Дигар бахшҳо",
+        "expected_name_ru": "Другие секторы",
+        "expected_name_en": "Other sectors",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 38
+    },
+    {
+        "code": "3.2.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 39
+    },
+    {
+        "code": "3.2.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 40
+    },
+    {
+        "code": "II.",
+        "expected_name_tg": "Ҳисоби амалиёт бо сармоя",
+        "expected_name_ru": "Счет операций с капиталом",
+        "expected_name_en": "Capital account",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 41
+    },
+    {
+        "code": "II.credit",
+        "expected_name_tg": "кредит",
+        "expected_name_ru": "кредит",
+        "expected_name_en": "credit",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 42
+    },
+    {
+        "code": "II.debet",
+        "expected_name_tg": "дебет",
+        "expected_name_ru": "дебет",
+        "expected_name_en": "debet",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 43
+    },
+    {
+        "code": "II.Net lending (+) / net borrowing (-) (balance from current and capital accounts)",
+        "expected_name_tg": "Қарздиҳии соф (+) / қарзгирии соф (-) (бақияи ҳисоби амалиёти ҷорӣ ва ҳисоби амалиёт бо сармоя)",
+        "expected_name_ru": "Чистое кредитование (+) / чистое заимствование (-) (сальдо по данным счета текущих операций и счёта операций с капиталом)",
+        "expected_name_en": "Net lending (+) / net borrowing (-) (balance from current and capital accounts)",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 44
+    },
+    {
+        "code": "III.",
+        "expected_name_tg": "Ҳисоби молиявӣ",
+        "expected_name_ru": "Финансовый счет",
+        "expected_name_en": "Financial account",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 45
+    },
+    {
+        "code": "III.Net lending (+) / net borrowing (-) (from financial account)",
+        "expected_name_tg": "Қарздиҳии соф (+) / қарзгирии соф (-) (бақияи ҳисоби молиявӣ)",
+        "expected_name_ru": "Чистое кредитование (+) / чистое заимствование (-) (сальдо по данным финансового счета)",
+        "expected_name_en": "Net lending (+) / net borrowing (-) (from financial account)",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 46
+    },
+    {
+        "code": "4.",
+        "expected_name_tg": "Сармоягузориҳои мустақим",
+        "expected_name_ru": "Прямые инвестиции",
+        "expected_name_en": "Direct investments",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 47
+    },
+    {
+        "code": "4.1.",
+        "expected_name_tg": "Ҷалби софи дороиҳои молиявӣ",
+        "expected_name_ru": "Чистое приобретение финансовых активов",
+        "expected_name_en": "Net acquisition of financial assets",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 48
+    },
+    {
+        "code": "4.1.1.",
+        "expected_name_tg": "Воситаҳои иштирок дар сармоя",
+        "expected_name_ru": "ЧИнструменты участия в капитале",
+        "expected_name_en": "Equity and investment fund shares",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 49
+    },
+    {
+        "code": "4.1.1.1.",
+        "expected_name_tg": "Иштирок дар сармоя бидуни маблағгузории такрории даромадҳо",
+        "expected_name_ru": "Участие в капитале за исключением реинвестирования доходов",
+        "expected_name_en": "Equity other than reinvestment of earnings",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 50
+    },
+    {
+        "code": "4.1.1.2.",
+        "expected_name_tg": "Маблағгузории такрории даромадҳо",
+        "expected_name_ru": "Реинвестирование доходов",
+        "expected_name_en": "Reinvestment of earnings",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 51
+    },
+    {
+        "code": "4.1.2.",
+        "expected_name_tg": "Воситаҳои қарзӣ",
+        "expected_name_ru": "Долговые инструменты",
+        "expected_name_en": "Debt instruments",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 52
+    },
+    {
+        "code": "4.2.",
+        "expected_name_tg": "Ҷалби софи уҳдадориҳо",
+        "expected_name_ru": "Чистое принятие обязательств",
+        "expected_name_en": "Net incurrence of liabilities",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 53
+    },
+    {
+        "code": "4.2.1.",
+        "expected_name_tg": "Воситаҳои иштирок дар сармоя",
+        "expected_name_ru": "Инструменты участия в капитале",
+        "expected_name_en": "Equity and investment fund shares",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 54
+    },
+    {
+        "code": "4.2.1.1.",
+        "expected_name_tg": "Иштирок дар сармоя бидуни маблағгузории такрории даромадҳо",
+        "expected_name_ru": "Участие в капитале за исключением реинвестирования доходов",
+        "expected_name_en": "Equity other than reinvestment of earnings",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 55
+    },
+    {
+        "code": "4.2.1.2.",
+        "expected_name_tg": "Маблағгузории такрории даромадҳо",
+        "expected_name_ru": "Реинвестирование доходов",
+        "expected_name_en": "Reinvestment of earnings",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 56
+    },
+    {
+        "code": "4.2.2.",
+        "expected_name_tg": "Воситаҳои қарзӣ",
+        "expected_name_ru": "Долговые инструменты",
+        "expected_name_en": "Debt instruments",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 57
+    },
+    {
+        "code": "5.",
+        "expected_name_tg": "Сармоягузориҳои ҷомадонӣ",
+        "expected_name_ru": "Портфельные инвестиции",
+        "expected_name_en": "Portfolio investment",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 58
+    },
+    {
+        "code": "5.1.",
+        "expected_name_tg": "Ҷалби софи дороиҳои молиявӣ",
+        "expected_name_ru": "Чистое приобретение финансовых активов",
+        "expected_name_en": "Net acquisition of financial assets",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 59
+    },
+    {
+        "code": "5.1.1.",
+        "expected_name_tg": "Воситаҳои иштирок дар сармоя",
+        "expected_name_ru": "Инструменты участия в капитале",
+        "expected_name_en": "Equity and investment fund shares",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 60
+    },
+    {
+        "code": "5.1.2.",
+        "expected_name_tg": "Қоғазҳои қиматноки қарзӣ бидуни иштирок дар сармоя",
+        "expected_name_ru": "Долговые ценные бумаги за исключением участия в капитале",
+        "expected_name_en": "Equity securities other than investment fund shares",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 61
+    },
+    {
+        "code": "5.2.",
+        "expected_name_tg": "Ҷалби софи уҳдадориҳо",
+        "expected_name_ru": "Чистое принятие обязательств",
+        "expected_name_en": "Net incurrence of liabilities",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 62
+    },
+    {
+        "code": "5.2.1.",
+        "expected_name_tg": "Воситаҳои иштирок дар сармоя",
+        "expected_name_ru": "Инструменты участия в капитале",
+        "expected_name_en": "Equity and investment fund shares",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 63
+    },
+    {
+        "code": "5.2.2.",
+        "expected_name_tg": "Қоғазҳои қиматноки қарзӣ бидуни иштирок дар сармоя",
+        "expected_name_ru": "Долговые ценные бумаги за исключением участия в капитале",
+        "expected_name_en": "Equity securities other than investment fund shares",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 64
+    },
+    {
+        "code": "6.",
+        "expected_name_tg": "Деривативҳои молиявӣ",
+        "expected_name_ru": "Финансовые деривативы",
+        "expected_name_en": "Financial derivatives",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 65
+    },
+    {
+        "code": "6.1.",
+        "expected_name_tg": "Ҷалби софи дороиҳои молиявӣ",
+        "expected_name_ru": "Чистое приобретение финансовых активов",
+        "expected_name_en": "Net acquisition of financial assets",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 66
+    },
+    {
+        "code": "6.2.",
+        "expected_name_tg": "Ҷалби софи уҳдадориҳо",
+        "expected_name_ru": "Чистое принятие обязательств",
+        "expected_name_en": "Net incurrence of liabilities",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 67
+    },
+    {
+        "code": "7.",
+        "expected_name_tg": "Сармоягузориҳои дигар",
+        "expected_name_ru": "Другие инвестиции",
+        "expected_name_en": "Other investment",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 68
+    },
+    {
+        "code": "7.1.",
+        "expected_name_tg": "Ҷалби софи дороиҳои молиявӣ",
+        "expected_name_ru": "Чистое приобретение финансовых активов",
+        "expected_name_en": "Net acquisition of financial assets",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 69
+    },
+    {
+        "code": "7.1.1.",
+        "expected_name_tg": "Дигар воситаҳои иштирок дар сармоя",
+        "expected_name_ru": "Другие инструменты участия в капитале",
+        "expected_name_en": "Other equity of investment fund shares",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 70
+    },
+    {
+        "code": "7.1.2.",
+        "expected_name_tg": "Воситаҳои қарзӣ",
+        "expected_name_ru": "Долговые инструменты",
+        "expected_name_en": "Debt instruments",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 71
+    },
+    {
+        "code": "7.1.2.1.",
+        "expected_name_tg": "Бонки марказӣ",
+        "expected_name_ru": "Центральный банк",
+        "expected_name_en": "Central bank",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 72
+    },
+    {
+        "code": "7.1.2.2.",
+        "expected_name_tg": "Ташкилотҳои амонатӣ, бидуни бонки марказӣ",
+        "expected_name_ru": "Депозитные организации, за исключением центрального банка",
+        "expected_name_en": "Deposit-taking corporations, except central bank",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 73
+    },
+    {
+        "code": "7.1.2.3.",
+        "expected_name_tg": "Бахши идоракунии давлатӣ",
+        "expected_name_ru": "Сектор государственного управления",
+        "expected_name_en": "General government",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 74
+    },
+    {
+        "code": "7.1.2.4.",
+        "expected_name_tg": "Дигар бахшҳо",
+        "expected_name_ru": "Другие сектора",
+        "expected_name_en": "Other sectors",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 75
+    },
+    {
+        "code": "7.1.2.4.1.",
+        "expected_name_tg": "Дигар ташкилотҳои молиявӣ",
+        "expected_name_ru": "Другие финансовые организации",
+        "expected_name_en": "Other financial corporations",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 76
+    },
+    {
+        "code": "7.1.2.4.2.",
+        "expected_name_tg": "Ташкилотҳои ғайримолиявӣ, хоҷагидории хонагӣ ва ТҒХХХ",
+        "expected_name_ru": "Нефинансовые организации, домашние хозяйства и НКОДХ",
+        "expected_name_en": "Nonfinancial corporations, households, NPISHs",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 77
+    },
+    {
+        "code": "7.1.2.4.2.1.",
+        "expected_name_tg": "Пули нақд ва амонатҳо",
+        "expected_name_ru": "Наличная валюта и депозиты",
+        "expected_name_en": "Currency and deposits",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 78
+    },
+    {
+        "code": "7.1.2.4.2.2.",
+        "expected_name_tg": "Қарзу вомҳо",
+        "expected_name_ru": "Кредиты и займы",
+        "expected_name_en": "Loans and borrowings",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 79
+    },
+    {
+        "code": "7.1.2.4.2.3.",
+        "expected_name_tg": "Барномаҳои суғурта, нафақа ва барномаҳои кафолати стандартӣ",
+        "expected_name_ru": "Страховые, пенсионные программы и программы стандартных гарантий",
+        "expected_name_en": "Insurance, pension, and standardized guarantee schemes",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 80
+    },
+    {
+        "code": "7.1.2.4.2.4.",
+        "expected_name_tg": "Қарзҳо ва пешпардохтҳои савдо",
+        "expected_name_ru": "Торговые кредиты и авансы",
+        "expected_name_en": "Trade credit and advances",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 81
+    },
+    {
+        "code": "7.1.2.4.2.5.",
+        "expected_name_tg": "Қарздории дигари дебиторӣ",
+        "expected_name_ru": "Прочая дебиторская задолженность",
+        "expected_name_en": "Other accounts receivable",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 82
+    },
+    {
+        "code": "7.2.",
+        "expected_name_tg": "Ҷалби софи уҳдадориҳо",
+        "expected_name_ru": "Чистое принятие обязательств",
+        "expected_name_en": "Net incurrence of liabilities",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 83
+    },
+    {
+        "code": "7.2.1.",
+        "expected_name_tg": "Дигар воситаҳои иштирок дар сармоя",
+        "expected_name_ru": "Другие инструменты участия в капитале",
+        "expected_name_en": "Other equity of investment fund shares",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 84
+    },
+    {
+        "code": "7.2.2.",
+        "expected_name_tg": "Воситаҳои қарзӣ",
+        "expected_name_ru": "Долговые инструменты",
+        "expected_name_en": "Debt instruments",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 85
+    },
+    {
+        "code": "7.2.2.1.",
+        "expected_name_tg": "Бонки марказӣ",
+        "expected_name_ru": "Центральный банк",
+        "expected_name_en": "Central bank",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 86
+    },
+    {
+        "code": "7.2.2.2.",
+        "expected_name_tg": "Ташкилотҳои амонатӣ, бидуни бонки марказӣ",
+        "expected_name_ru": "Депозитные организации, за исключением центрального банка",
+        "expected_name_en": "Deposit-taking corporations, except central bank",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 87
+    },
+    {
+        "code": "7.2.2.3.",
+        "expected_name_tg": "Бахши идоракунии давлатӣ",
+        "expected_name_ru": "Сектор государственного управления",
+        "expected_name_en": "General government",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 88
+    },
+    {
+        "code": "7.2.2.4.",
+        "expected_name_tg": "Дигар бахшҳо",
+        "expected_name_ru": "Другие сектора",
+        "expected_name_en": "Other sectors",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 89
+    },
+    {
+        "code": "7.2.2.4.1.",
+        "expected_name_tg": "Дигар ташкилотҳои молиявӣ",
+        "expected_name_ru": "Другие финансовые организации",
+        "expected_name_en": "Other financial corporations",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 90
+    },
+    {
+        "code": "7.2.2.4.2.",
+        "expected_name_tg": "Ташкилотҳои ғайримолиявӣ, хоҷагидории хонагӣ ва ТҒХХХ",
+        "expected_name_ru": "Нефинансовые организации, домашние хозяйства и НКОДХ",
+        "expected_name_en": "Nonfinancial corporations, households, NPISHs",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 91
+    },
+    {
+        "code": "7.2.2.4.2.1.",
+        "expected_name_tg": "Қарзу вомҳо",
+        "expected_name_ru": "Кредиты и займы",
+        "expected_name_en": "Loans and borrowings",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 92
+    },
+    {
+        "code": "7.2.2.4.2.2.",
+        "expected_name_tg": "Барномаҳои суғурта, нафақа ва барномаҳои кафолати стандартӣ",
+        "expected_name_ru": "Страховые, пенсионные программы и программы стандартных гарантий",
+        "expected_name_en": "Insurance, pension, and standardized guarantee schemes",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 93
+    },
+    {
+        "code": "7.2.2.4.2.3.",
+        "expected_name_tg": "Қарзҳо ва пешпардохтҳои савдо",
+        "expected_name_ru": "Торговые кредиты и авансы",
+        "expected_name_en": "Trade credit and advances",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 94
+    },
+    {
+        "code": "7.2.2.4.2.4.",
+        "expected_name_tg": "Қарздории дигари кредиторӣ",
+        "expected_name_ru": "Прочая кредиторская задолженность",
+        "expected_name_en": "Other accounts payable",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 95
+    },
+    {
+        "code": "IV.",
+        "expected_name_tg": "Хатогиҳои маҳз ва таҳрифот",
+        "expected_name_ru": "Чистые ошибки и пропуски",
+        "expected_name_en": "Net errors and omissions",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 96
+    },
+    {
+        "code": "V.",
+        "expected_name_tg": "Тавозуни умумӣ",
+        "expected_name_ru": "Общий баланс",
+        "expected_name_en": "Overal balance",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 97
+    },
+    {
+        "code": "VI.",
+        "expected_name_tg": "Маблағгузорӣ",
+        "expected_name_ru": "Финансирование",
+        "expected_name_en": "Financing",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 98
+    },
+    {
+        "code": "6.1.",
+        "expected_name_tg": "Дороиҳои захиравӣ",
+        "expected_name_ru": "Резервные активы",
+        "expected_name_en": "Net acquisition of financial assets",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 99
+    },
+    {
+        "code": "6.2.",
+        "expected_name_tg": "Қарзу вомҳо аз ХБА",
+        "expected_name_ru": "Кредиты и займы от МВФ",
+        "expected_name_en": "Net incurrence of liabilities",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 100
+    },
+    {
+        "code": "6.3.",
+        "expected_name_tg": "Маблағгузории махсус (уҳдадориҳо)",
+        "expected_name_ru": "Исключительное финансирование (обязательства)",
+        "expected_name_en": "The exceptional financing",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 101
+    },
+    {
+        "code": "6.3.1.",
+        "expected_name_tg": "Ҷалби қарзҳо барои маблағгузории тавозуни пардохт",
+        "expected_name_ru": "Привлечение кредитов для финансирования платёжного баланса",
+        "expected_name_en": "Borrowing of loans for financing the balance of payments",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 102
+    },
+    {
+        "code": "8.",
+        "expected_name_tg": "Дороиҳои захиравӣ",
+        "expected_name_ru": "Резервные активы",
+        "expected_name_en": "Reserve assets",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 102
+    },
+    {
+        "code": "IV.",
+        "expected_name_tg": "Хатогиҳои маҳз ва таҳрифот",
+        "expected_name_ru": "Чистые ошибки и пропуски",
+        "expected_name_en": "Net errors and omissions",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 102
+    },
+    {
+        "code": "V.",
+        "expected_name_tg": "Тавозуни умумӣ",
+        "expected_name_ru": "Общий баланс",
+        "expected_name_en": "Overal balance",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 102
+    }
+]
+}

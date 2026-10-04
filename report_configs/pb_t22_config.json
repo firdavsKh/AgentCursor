@@ -1,0 +1,28 @@
+{
+  "config_name": {
+    "code": "22"
+  },
+  "sheet_name": "pb",
+  "data_start_row": 11,
+  "columns": {
+    "item_code_col": "A",
+    "item_name_col": "B",
+    "tnved_code_col": "D",
+    "value_cols": {
+      "prev_year_quantity_thous_tons": "E",
+      "prev_year_val_thous_usd": "F",
+      "curr_year_quantity_thous_tons": "H",
+      "curr_year_val_thous_usd": "J"
+    }
+  },
+  "rules": [
+    {
+      "code": "1",
+      "expected_name_tg": "Название категории на ТДЖ",
+      "expected_name_ru": "Наименование категории",
+      "expected_name_en": "Category Name EN",
+      "type": "numeric",
+      "nullable": true
+    }
+  ]
+}

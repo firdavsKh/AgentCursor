@@ -1,0 +1,26 @@
+{
+  "config_name": {
+    "code": "24"
+  },
+  "data_start_row": 10,
+  "columns": {
+    "item_name_col": "B",
+    "code_col": "C",
+    "value_cols": {
+      "prev_year_export_thous_usd": "D",
+      "prev_year_import_thous_usd": "E",
+      "curr_year_export_thous_usd": "F",
+      "curr_year_import_thous_usd": "G"
+    }
+  },
+  "rules": [
+    {
+      "code": "1",
+      "expected_name_tg": "Название категории на ТДЖ",
+      "expected_name_ru": "Наименование категории",
+      "expected_name_en": "Category Name EN",
+      "type": "numeric",
+      "nullable": true
+    }
+  ]
+}

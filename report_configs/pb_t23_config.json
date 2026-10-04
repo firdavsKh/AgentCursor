@@ -1,0 +1,2236 @@
+{
+  "sheet_name": "pb",
+  "config_name": {
+    "name": "pb_t23_config.json",
+    "code": 23
+  },
+  "data_start_row": 10,
+  "columns": {
+    "item_code_col": "A",
+    "item_name_col": "A",
+    "value_cols": {
+      "prevent_year": "D",
+      "prevent_cis": "E",
+      "prevent_far": "F",
+      "current_year": "G",
+      "current_cis": "H",
+      "current_far": "I"
+    }
+  },
+  "rules": [
+    {
+      "code": "services",
+      "guid": 1,
+      "expected_name_tg": "ХИЗМАТРАСОНИХО",
+      "expected_name_ru": "УСЛУГИ",
+      "expected_name_en": "SERVICES",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "credits",
+      "guid": 2,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "debits",
+      "guid": 3,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.",
+      "guid": 4,
+      "expected_name_tg": "Хизматрасонӣ барои коркарди захираҳои модии дигар тарафҳо",
+      "expected_name_ru": "Услуги по обработке материальных ресурсов, принадлежащих другим сторонам",
+      "expected_name_en": "Manufactoring services on physical inputs owned by others",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.credits",
+      "guid": 5,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.debits",
+      "guid": 6,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.reference_11_goods_for_services",
+      "guid": 7,
+      "expected_name_tg": "Барои маълумот:1.1. Молҳои коркардшаванда",
+      "expected_name_ru": "Справочно:     1.1. Товары для обработки",
+      "expected_name_en": "reference:       1.1. Goods for services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.goods_for_processing_in_the_republic_of_tajikistan",
+      "guid": 8,
+      "expected_name_tg": "молҳои дар ҳудуди ҶТ коркардшаванда",
+      "expected_name_ru": "товары для переработки на территории РТ",
+      "expected_name_en": "goods for processing in the Republic of Tajikistan",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.goods_for_processing_abroad",
+      "guid": 9,
+      "expected_name_tg": "молҳои дар хориҷа коркардшаванда",
+      "expected_name_ru": "товары для переработки за границей",
+      "expected_name_en": "goods for processing abroad",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.",
+      "guid": 10,
+      "expected_name_tg": "Таъмир ва хизматрасонии техникие, ки ба дигар гурӯҳҳо шомил нест",
+      "expected_name_ru": "Услуги по ремонту и техобслуживанию, не отнесенные к др. категориям",
+      "expected_name_en": "2 Maintenance and repair services n.i.e.",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.credits",
+      "guid": 11,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.debits",
+      "guid": 12,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.",
+      "guid": 13,
+      "expected_name_tg": "Хизматрасонии нақлиётӣ (аз ҷумла хизмати почта ва пайк)",
+      "expected_name_ru": "Транспортные услуги  (вкл. почтовые и курьерские)",
+      "expected_name_en": "Transport",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.credits",
+      "guid": 14,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.debits",
+      "guid": 15,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.",
+      "guid": 16,
+      "expected_name_tg": "1 мусофирбар",
+      "expected_name_ru": "1 пассажирский",
+      "expected_name_en": "passenger",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.credits",
+      "guid": 17,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.debits",
+      "guid": 18,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.payable_by_bonden_seasonal_and_other_shonp-penm_wonkens",
+      "guid": 19,
+      "expected_name_tg": "аз ҷумла  аз ҷониби коргарони наздисарҳадӣ, мавсимӣ ва дигарҳо пардохтшаванда",
+      "expected_name_ru": "в т.ч. оплачиваемый приграничными, сезонными и др. работниками",
+      "expected_name_en": "payable by boNdeN, seasonal and other shoNP-PeNm woNkeNs",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.кредит",
+      "guid": 20,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.дебет",
+      "guid": 21,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.3.",
+      "guid": 22,
+      "expected_name_tg": "дигар",
+      "expected_name_ru": "прочий",
+      "expected_name_en": "other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.3.credits",
+      "guid": 23,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.1.3.debits",
+      "guid": 24,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.",
+      "guid": 25,
+      "expected_name_tg": "Нақлиети автомобилӣ",
+      "expected_name_ru": "Автомобильный транспорт",
+      "expected_name_en": "Motor transport",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.credits",
+      "guid": 26,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.debits",
+      "guid": 27,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.1.",
+      "guid": 28,
+      "expected_name_tg": "мусофирбар",
+      "expected_name_ru": "пассажирский",
+      "expected_name_en": "passenger",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.1.credits",
+      "guid": 29,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.1.debits",
+      "guid": 30,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.1.payable_by_bonden_seasonal_and_other_shonp-penm_wonkens",
+      "guid": 31,
+      "expected_name_tg": "аз ҷумла  аз ҷониби коргарони наздисарҳадӣ, мавсимӣ ва дигарҳо пардохтшаванда",
+      "expected_name_ru": "в т.ч. оплачиваемый приграничными, сезонными и др. работниками",
+      "expected_name_en": "payable by boNdeN, seasonal and other shoNP-PeNm woNkeNs",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.1.кредит",
+      "guid": 32,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.1.дебет",
+      "guid": 33,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.2.",
+      "guid": 34,
+      "expected_name_tg": "борбар (боркаш)",
+      "expected_name_ru": "грузовой",
+      "expected_name_en": "freight",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.2.credits",
+      "guid": 35,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.2.debits",
+      "guid": 36,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.3.",
+      "guid": 37,
+      "expected_name_tg": "дигар",
+      "expected_name_ru": "прочий",
+      "expected_name_en": "other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.3.credits",
+      "guid": 38,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.2.3.debits",
+      "guid": 39,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.",
+      "guid": 40,
+      "expected_name_tg": "Нақлиёти ҳавоӣ",
+      "expected_name_ru": "Воздушный транспорт",
+      "expected_name_en": "Air transport",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.credits",
+      "guid": 41,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.debits",
+      "guid": 42,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.1.",
+      "guid": 43,
+      "expected_name_tg": "мусофирбар",
+      "expected_name_ru": "пассажирский",
+      "expected_name_en": "passenger",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.1.credits",
+      "guid": 44,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.1.debits",
+      "guid": 45,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.1.payable_by_bonden_seasonal_and_other_shonp-penm_wonkens",
+      "guid": 46,
+      "expected_name_tg": "аз ҷумла  аз ҷониби коргарони наздисарҳадӣ, мавсимӣ ва дигарҳо пардохтшаванда",
+      "expected_name_ru": "в т.ч. оплачиваемый приграничными, сезонными и др. работниками",
+      "expected_name_en": "payable by boNdeN, seasonal and other shoNP-PeNm woNkeNs",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.1.кредит",
+      "guid": 47,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.1.дебет",
+      "guid": 48,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.2.",
+      "guid": 49,
+      "expected_name_tg": "борбар (боркаш)",
+      "expected_name_ru": "грузовой",
+      "expected_name_en": "freight",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.2.credits",
+      "guid": 50,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.2.debits",
+      "guid": 51,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.3.",
+      "guid": 52,
+      "expected_name_tg": "дигар",
+      "expected_name_ru": "прочий",
+      "expected_name_en": "other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.3.credits",
+      "guid": 53,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.3.3.debits",
+      "guid": 54,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.",
+      "guid": 55,
+      "expected_name_tg": "Нақлиёти баҳрӣ (дарёӣ)",
+      "expected_name_ru": "Морской  транспорт",
+      "expected_name_en": "Sea PNanspoNP",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.кредит",
+      "guid": 56,
+      "expected_name_tg": "",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Кредит",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.дебет",
+      "guid": 57,
+      "expected_name_tg": "",
+      "expected_name_ru": "",
+      "expected_name_en": "Дебет",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.1.",
+      "guid": 58,
+      "expected_name_tg": "мусофирбар",
+      "expected_name_ru": "пассажирский",
+      "expected_name_en": "passenger",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.1.кредит",
+      "guid": 59,
+      "expected_name_tg": "",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Кредит",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.1.дебет",
+      "guid": 60,
+      "expected_name_tg": "",
+      "expected_name_ru": "",
+      "expected_name_en": "Дебет",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.1.payable_by_bonden_seasonal_and_other_shonp-penm_wonkens",
+      "guid": 61,
+      "expected_name_tg": "аз ҷумла  аз ҷониби коргарони наздисарҳадӣ, мавсимӣ ва дигарҳо пардохтшаванда",
+      "expected_name_ru": "в т.ч. оплачиваемый приграничными, сезонными и др. работниками",
+      "expected_name_en": "payable by boNdeN, seasonal and other shoNP-PeNm woNkeNs",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.2.",
+      "guid": 62,
+      "expected_name_tg": "борбар (боркаш)",
+      "expected_name_ru": "грузовой",
+      "expected_name_en": "freight",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.2.кредит",
+      "guid": 63,
+      "expected_name_tg": "",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Кредит",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.2.дебет",
+      "guid": 64,
+      "expected_name_tg": "",
+      "expected_name_ru": "",
+      "expected_name_en": "Дебет",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.3.",
+      "guid": 65,
+      "expected_name_tg": "дигар",
+      "expected_name_ru": "прочий",
+      "expected_name_en": "other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.3.кредит",
+      "guid": 66,
+      "expected_name_tg": "",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Кредит",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.3.дебет",
+      "guid": 67,
+      "expected_name_tg": "",
+      "expected_name_ru": "",
+      "expected_name_en": "Дебет",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.",
+      "guid": 68,
+      "expected_name_tg": "Нақлиёти  қубургузар",
+      "expected_name_ru": "Трубопроводный  транспорт",
+      "expected_name_en": "Pipeline PNanspoNPaPion",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.кредит",
+      "guid": 69,
+      "expected_name_tg": "",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Кредит",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.дебет",
+      "guid": 70,
+      "expected_name_tg": "",
+      "expected_name_ru": "",
+      "expected_name_en": "Дебет",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.1.",
+      "guid": 71,
+      "expected_name_tg": "борбар (боркаш)",
+      "expected_name_ru": "грузовой",
+      "expected_name_en": "freight",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.1.кредит",
+      "guid": 72,
+      "expected_name_tg": "",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Кредит",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.1.дебет",
+      "guid": 73,
+      "expected_name_tg": "",
+      "expected_name_ru": "",
+      "expected_name_en": "Дебет",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.2.",
+      "guid": 74,
+      "expected_name_tg": "дигар",
+      "expected_name_ru": "прочий",
+      "expected_name_en": "other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.2.кредит",
+      "guid": 75,
+      "expected_name_tg": "",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Кредит",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.2.дебет",
+      "guid": 76,
+      "expected_name_tg": "",
+      "expected_name_ru": "",
+      "expected_name_en": "Дебет",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.credits",
+      "guid": 77,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.debits",
+      "guid": 78,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.1.credits",
+      "guid": 79,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.1.debits",
+      "guid": 80,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.2.credits",
+      "guid": 81,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.2.debits",
+      "guid": 82,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.3.credits",
+      "guid": 83,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.4.3.debits",
+      "guid": 84,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.credits",
+      "guid": 85,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.debits",
+      "guid": 86,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.for_all_modes_of_transport",
+      "guid": 87,
+      "expected_name_tg": "Барои ҳама намуди нақлиёт",
+      "expected_name_ru": "В отношении всех видов транспорта",
+      "expected_name_en": "For all modes of transport",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.1.credits",
+      "guid": 88,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.1.debits",
+      "guid": 89,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.1.в_тч_оплачиваемый_приграничными_сезонными_и_др_работниками",
+      "guid": 90,
+      "expected_name_tg": "",
+      "expected_name_ru": "аз ҷумла  аз ҷониби коргарони наздисарҳадӣ, мавсимӣ ва дигарҳо пардохтшаванда",
+      "expected_name_en": "в т.ч. оплачиваемый приграничными, сезонными и др. работниками",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.2.credits",
+      "guid": 91,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.2.debits",
+      "guid": 92,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.3.",
+      "guid": 93,
+      "expected_name_tg": "дигар",
+      "expected_name_ru": "прочий",
+      "expected_name_en": "other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.3.credits",
+      "guid": 94,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3.5.3.debits",
+      "guid": 95,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.",
+      "guid": 96,
+      "expected_name_tg": "Сафарҳо",
+      "expected_name_ru": "Поездки",
+      "expected_name_en": "Travel",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.credits",
+      "guid": 97,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.debits",
+      "guid": 98,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.",
+      "guid": 99,
+      "expected_name_tg": "Корӣ",
+      "expected_name_ru": "Деловые",
+      "expected_name_en": "Business",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.credits",
+      "guid": 100,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.debits",
+      "guid": 101,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.1.",
+      "guid": 102,
+      "expected_name_tg": "Хариди молу хизматрасонӣ аз ҷониби коргарони наздисарҳадӣ ва мавсимӣ ва дигарҳо",
+      "expected_name_ru": "Приобретение товаров и услуг приграничными, сезонными и др. работниками",
+      "expected_name_en": "Acquisition of goods and services by border, seasonal, and other short-term workers",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.1.credits",
+      "guid": 103,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.1.debits",
+      "guid": 104,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.2.",
+      "guid": 105,
+      "expected_name_tg": "Дигар",
+      "expected_name_ru": "Прочее",
+      "expected_name_en": "Other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.2.credits",
+      "guid": 106,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.1.2.debits",
+      "guid": 107,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.",
+      "guid": 108,
+      "expected_name_tg": "Шахсӣ",
+      "expected_name_ru": "Личные",
+      "expected_name_en": "Personal",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.credits",
+      "guid": 109,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.debits",
+      "guid": 110,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.1.",
+      "guid": 111,
+      "expected_name_tg": "Бинобар вазъи саломатӣ (Табобат)",
+      "expected_name_ru": "В связи с состоянием здоровья",
+      "expected_name_en": "Health-related",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.1.credits",
+      "guid": 112,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.1.debits",
+      "guid": 113,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.2.",
+      "guid": 114,
+      "expected_name_tg": "Барои таҳсил",
+      "expected_name_ru": "В целях получения образования",
+      "expected_name_en": "Education-related",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.2.credits",
+      "guid": 115,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.2.debits",
+      "guid": 116,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.",
+      "guid": 117,
+      "expected_name_tg": "Дигар",
+      "expected_name_ru": "Прочее",
+      "expected_name_en": "Other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.credits",
+      "guid": 118,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.debits",
+      "guid": 119,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.fon_boph_business_and_pensonal_pnavel",
+      "guid": 120,
+      "expected_name_tg": "Барои сафарҳои корӣ ва шахсӣ (дар маҷмӯъ)",
+      "expected_name_ru": "В отношении как деловых, так и  личных поездок (в целом)",
+      "expected_name_en": "FoN boPh business and peNsonal PNavel",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.goods",
+      "guid": 121,
+      "expected_name_tg": "Молҳо",
+      "expected_name_ru": "Товары",
+      "expected_name_en": "Goods",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.кредит",
+      "guid": 122,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.дебет",
+      "guid": 123,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.local_pnansponp_senvices",
+      "guid": 124,
+      "expected_name_tg": "Хизматрасонии нақлиётии дохилӣ",
+      "expected_name_ru": "Местные транспортные услуги",
+      "expected_name_en": "Local PNanspoNP seNvices",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.accommodapion_senvices",
+      "guid": 125,
+      "expected_name_tg": "Хизматрасонии ҷойгиркунӣ",
+      "expected_name_ru": "Услуги по размещению",
+      "expected_name_en": "AccommodaPion seNvices",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.food-senving_senvices",
+      "guid": 126,
+      "expected_name_tg": "Хизматрасонии таъмини ғизо",
+      "expected_name_ru": "Услуги по обеспечению питанием",
+      "expected_name_en": "Food-seNving seNvices",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.other_senvices",
+      "guid": 127,
+      "expected_name_tg": "Дигар хизматрасониҳо",
+      "expected_name_ru": "Прочие услуги",
+      "expected_name_en": "other seNvices",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.of_which_healph_senvices",
+      "guid": 128,
+      "expected_name_tg": "аз ҷумла : хизмати тиббӣ",
+      "expected_name_ru": "в том числе: услуги здравоохранения",
+      "expected_name_en": "of which: healPh seNvices",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4.2.3.of_which_educapion_senvices",
+      "guid": 129,
+      "expected_name_tg": "хизматрасонии бахши маориф",
+      "expected_name_ru": "услуги образования",
+      "expected_name_en": "of which: educaPion seNvices",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.",
+      "guid": 130,
+      "expected_name_tg": "Сохтмон",
+      "expected_name_ru": "Строительство",
+      "expected_name_en": "Construction",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.credits",
+      "guid": 131,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.debits",
+      "guid": 132,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.1.",
+      "guid": 133,
+      "expected_name_tg": "Сохтмон берун аз ҳудуди Ҷумҳурии Тоҷикистон",
+      "expected_name_ru": "Строительство за пределами Республики Таджикистан",
+      "expected_name_en": "Construction  abroad",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.1.credits",
+      "guid": 134,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.1.debits",
+      "guid": 135,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.2.",
+      "guid": 136,
+      "expected_name_tg": "Сохтмон дар  ҳудуди Ҷумҳурии Тоҷикистон",
+      "expected_name_ru": "Строительство на территории Республики Таджикистан",
+      "expected_name_en": "Construction in the Repablic of Tajikistan",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.2.credits",
+      "guid": 137,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5.2.debits",
+      "guid": 138,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.",
+      "guid": 139,
+      "expected_name_tg": "Хизматрасониии бахши суғурта ва таъмини нафақа",
+      "expected_name_ru": "Услуги в области страхования и пенсионного обеспечения",
+      "expected_name_en": "Insurance and pension services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.credits",
+      "guid": 140,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.debits",
+      "guid": 141,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.1.",
+      "guid": 142,
+      "expected_name_tg": "Суғуртаи мустақим",
+      "expected_name_ru": "Прямое страхование",
+      "expected_name_en": "Direct insurance",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.1.credits",
+      "guid": 143,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.1.debits",
+      "guid": 144,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.2.",
+      "guid": 145,
+      "expected_name_tg": "Аз нав суғуртакунӣ",
+      "expected_name_ru": "Перестрахование",
+      "expected_name_en": "Reinsurance",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.2.credits",
+      "guid": 146,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.2.debits",
+      "guid": 147,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.3.",
+      "guid": 148,
+      "expected_name_tg": "Хизматрасонии фаръии суғурта",
+      "expected_name_ru": "Вспомагательные страховые услуги",
+      "expected_name_en": "Auxiliary insurance services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.3.credits",
+      "guid": 149,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.3.debits",
+      "guid": 150,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.4.",
+      "guid": 151,
+      "expected_name_tg": "Хизматрасонии таъмини нафақа ва додани кафолатҳои стандартӣ",
+      "expected_name_ru": "Услуги в области пенсионного обеспечения и предоставления стандартных гарантий",
+      "expected_name_en": "Pension and standardized guarantee services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.4.credits",
+      "guid": 152,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.4.debits",
+      "guid": 153,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.5.",
+      "guid": 154,
+      "expected_name_tg": "Дигар",
+      "expected_name_ru": "Прочие",
+      "expected_name_en": "Other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.5.credits",
+      "guid": 155,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6.5.debits",
+      "guid": 156,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.",
+      "guid": 157,
+      "expected_name_tg": "Хизматрасонии молиявӣ",
+      "expected_name_ru": "Финансовые услуги",
+      "expected_name_en": "Financial services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.credits",
+      "guid": 158,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.debits",
+      "guid": 159,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.1.",
+      "guid": 160,
+      "expected_name_tg": "Хизматрасоние, ки маблағи он ошкоро гирифта мешавад, дигар хизматрасонии молиявӣ",
+      "expected_name_ru": "Услуги, за кот. взимается плата в явной форме, и др. фин. услуги",
+      "expected_name_en": "Explicitly charged and other financial services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.1.credits",
+      "guid": 161,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.1.debits",
+      "guid": 162,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.2.",
+      "guid": 163,
+      "expected_name_tg": "Хизматрасонии миёнаравии молиявии ғайримустақим ҳисобшаванда",
+      "expected_name_ru": "Услуги по фин. посредничеству, измеряемые косвенным образом (УФПИК)",
+      "expected_name_en": "Financial intermediation services indirectly measured (FISIM)",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.2.credits",
+      "guid": 164,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7.2.debits",
+      "guid": 165,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "8.",
+      "guid": 166,
+      "expected_name_tg": "Ҳаққи хизмати истифодаи моликияти зеҳнӣ",
+      "expected_name_ru": "Плата за использование интелектуальной собственности",
+      "expected_name_en": "Charges for the use of intellectual property n.i.e.",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "8.credits",
+      "guid": 167,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "8.debits",
+      "guid": 168,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.",
+      "guid": 169,
+      "expected_name_tg": "Хизматрасонии телекоммуникатсионӣ, компютерӣ ва иттилоотӣ",
+      "expected_name_ru": "Телекоммуникационные, компьютерные и информационные услуги",
+      "expected_name_en": "Telecommunications, computer, and information services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.credits",
+      "guid": 170,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.debits",
+      "guid": 171,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.1.",
+      "guid": 172,
+      "expected_name_tg": "Хизматрасонии телекоммуникатсионӣ",
+      "expected_name_ru": "Телекоммуникационные услуги",
+      "expected_name_en": "Telecommunications services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.1.credits",
+      "guid": 173,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.1.debits",
+      "guid": 174,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.2.",
+      "guid": 175,
+      "expected_name_tg": "Хизматрасонии компютерӣ",
+      "expected_name_ru": "Компьютерные услуги",
+      "expected_name_en": "Computer services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.2.credits",
+      "guid": 176,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.2.debits",
+      "guid": 177,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.3.",
+      "guid": 178,
+      "expected_name_tg": "Хизматрасонии иттилоотӣ",
+      "expected_name_ru": "Информационные услуги",
+      "expected_name_en": "Information services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.3.credits",
+      "guid": 179,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9.3.debits",
+      "guid": 180,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.",
+      "guid": 181,
+      "expected_name_tg": "Дигар хизматрасонии корӣ",
+      "expected_name_ru": "Другие деловые услуги",
+      "expected_name_en": "Other business services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.credits",
+      "guid": 182,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.debits",
+      "guid": 183,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.1.",
+      "guid": 184,
+      "expected_name_tg": "Хизматрасонӣ дар соҳаи корҳои илмию тадқиқотӣ ва озмоишию конструкторӣ",
+      "expected_name_ru": "Услуги в обл. научно-исследов. и опытно-конcтр. работ (НИОКР)",
+      "expected_name_en": "Research and development services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.1.credits",
+      "guid": 185,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.1.debits",
+      "guid": 186,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.",
+      "guid": 187,
+      "expected_name_tg": "Хизматрасонии касбӣ ва машваратӣ дар соҳаи идорасозӣ",
+      "expected_name_ru": "Профес-ые услуги и консультационные услуги в обл. управления",
+      "expected_name_en": "Professional and management consulting services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.credits",
+      "guid": 188,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.debits",
+      "guid": 189,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.1.",
+      "guid": 190,
+      "expected_name_tg": "Хизматрасонии ҳуқуқӣ",
+      "expected_name_ru": "Юридические услуги",
+      "expected_name_en": "Legal services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.1.credits",
+      "guid": 191,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.1.debits",
+      "guid": 192,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.2.",
+      "guid": 193,
+      "expected_name_tg": "Хизматрасонии ҳисобдорӣ",
+      "expected_name_ru": "Бухгалтерские услуги",
+      "expected_name_en": "Accounting services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.2.credits",
+      "guid": 194,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.2.debits",
+      "guid": 195,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.3.",
+      "guid": 196,
+      "expected_name_tg": "Хизматрасонӣ дар соҳаи идорасозӣ",
+      "expected_name_ru": "Услуги в области управления",
+      "expected_name_en": "Services in management sphere",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.3.credits",
+      "guid": 197,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.3.debits",
+      "guid": 198,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.4.",
+      "guid": 199,
+      "expected_name_tg": "Реклама, маркетинг",
+      "expected_name_ru": "Реклама, маркетинг",
+      "expected_name_en": "Advertismentm, marketing",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.4.credits",
+      "guid": 200,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.4.debits",
+      "guid": 201,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.5.",
+      "guid": 202,
+      "expected_name_tg": "Дигар",
+      "expected_name_ru": "Прочие",
+      "expected_name_en": "Other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.5.credits",
+      "guid": 203,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.2.5.debits",
+      "guid": 204,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.",
+      "guid": 205,
+      "expected_name_tg": "Хизматрасонии техникии марбут ба савдо ва дигар хизматрасонии корӣ",
+      "expected_name_ru": "Технические, связанные с торговлей и проч. деловые услуги",
+      "expected_name_en": "Technical, related with trade and other services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.credits",
+      "guid": 206,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.debits",
+      "guid": 207,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.1.",
+      "guid": 208,
+      "expected_name_tg": "Хизматрасонии меъморӣ, муҳандисӣ ва дигар хизматрасониҳои техникӣ",
+      "expected_name_ru": "Архитектурные, инженерные и другие технические услуги",
+      "expected_name_en": "Architectual, engeneering and other technical services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.1.credits",
+      "guid": 209,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.1.debits",
+      "guid": 210,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.2.",
+      "guid": 211,
+      "expected_name_tg": "Коркарди партовҳо, мубориза ба олудашавии муҳити зист",
+      "expected_name_ru": "Переработка отходов, борьба с загрязнением окруж. среды",
+      "expected_name_en": "Waste utilization, environmental conrol",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.2.credits",
+      "guid": 212,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.2.debits",
+      "guid": 213,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.3.",
+      "guid": 214,
+      "expected_name_tg": "Хизматрасонӣ дар соҳаи кишоварзӣ ва саноати истихроҷи маъдан",
+      "expected_name_ru": "Услуги в обл. с.х. и горнодобывающией промышленности",
+      "expected_name_en": "Servieces in minerals industry sphere",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.3.credits",
+      "guid": 215,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.3.debits",
+      "guid": 216,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.4.",
+      "guid": 217,
+      "expected_name_tg": "Хизматрасонии лизинги амалиётӣ",
+      "expected_name_ru": "Услуги операционного лизинга",
+      "expected_name_en": "Operative leasing services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.4.credits",
+      "guid": 218,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.4.debits",
+      "guid": 219,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.5.",
+      "guid": 220,
+      "expected_name_tg": "Хизматрасонии марбут ба савдо",
+      "expected_name_ru": "Связанные с торговлей услуги",
+      "expected_name_en": "trade related services (now on-selling)",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.5.credits",
+      "guid": 221,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.5.debits",
+      "guid": 222,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.6.",
+      "guid": 223,
+      "expected_name_tg": "Дигарҳо",
+      "expected_name_ru": "Прочие",
+      "expected_name_en": "Other",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.6.credits",
+      "guid": 224,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10.3.6.debits",
+      "guid": 225,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.",
+      "guid": 226,
+      "expected_name_tg": "Хизматрасонӣ ба шахсони алоҳида ва хизматрасонӣ дар соҳаи фарҳанг ва фароғат",
+      "expected_name_ru": "Услуги частным лицам и услуги в сфере культуры и отдыха",
+      "expected_name_en": "Personal, cultural, and recreational services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.credits",
+      "guid": 227,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.debits",
+      "guid": 228,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.1.",
+      "guid": 229,
+      "expected_name_tg": "Хизматрасонии аудиовизуалӣ ва хизматҳои ба он вобаста",
+      "expected_name_ru": "Аудиовизуальные и связанные с ними услуги",
+      "expected_name_en": "Audiovisual and related services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.1.credits",
+      "guid": 230,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.1.debits",
+      "guid": 231,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.2.",
+      "guid": 232,
+      "expected_name_tg": "Дигар хизматрасониҳо ба шахсони алоҳида ва хизматрасонӣ дар соҳаи фарҳанг ва фароғат",
+      "expected_name_ru": "Прочие услуги частным лицам и услуги в сфере культуры и отдыха",
+      "expected_name_en": "Other personal, cultural, and recreational services",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.2.credits",
+      "guid": 233,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11.2.debits",
+      "guid": 234,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.",
+      "guid": 235,
+      "expected_name_tg": "Молҳо ва хизматрасониҳои давлатӣ, ки ба дигар гурӯҳҳо шомил нестанд",
+      "expected_name_ru": "Государственные товары и услуги, не отнесенные к др. категориям",
+      "expected_name_en": "Government goods and services n.i.e.",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.credits",
+      "guid": 236,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.debits",
+      "guid": 237,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.1.",
+      "guid": 238,
+      "expected_name_tg": "Молу хизматрасониҳое, ки ба сафоратхонаҳо, пойгоҳҳои низомӣ ва созмонҳои байналмлалӣ расонида мешаванд",
+      "expected_name_ru": "Тов. и усл., пост-ые и получ-ые посол-ми, воен. базами и межд. организац.",
+      "expected_name_en": "1Goods and services delivered or received by embasses, military bases and international organizations",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.1.credits",
+      "guid": 239,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.1.debits",
+      "guid": 240,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.2.",
+      "guid": 241,
+      "expected_name_tg": "Дигар хизматрасониҳое, ки ба мақомоти идории давлаӣ расонида мешавад.",
+      "expected_name_ru": "Другие услуги, поставляемые и получаемые органами гос.управления",
+      "expected_name_en": "Other services delivered or received by government",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.2.credits",
+      "guid": 242,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.2.debits",
+      "guid": 243,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.3.",
+      "guid": 244,
+      "expected_name_tg": "Хизматрасониҳои марбут ба туризм (саёҳат) ҳангоми сафар ва  мусофиркашонӣ",
+      "expected_name_ru": "Связанные с туризмом услуги в сфере поездок и пассажирского транспорта",
+      "expected_name_en": "Tourism-related services in travel and passenger transport",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.3.credits",
+      "guid": 245,
+      "expected_name_tg": "Кредит",
+      "expected_name_ru": "Кредит",
+      "expected_name_en": "Credits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "12.3.debits",
+      "guid": 246,
+      "expected_name_tg": "Дебет",
+      "expected_name_ru": "Дебет",
+      "expected_name_en": "Debits",
+      "type": "numeric",
+      "nullable": true
+    }
+  ]
+}

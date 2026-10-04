@@ -1,0 +1,126 @@
+{
+  "sheet_name": "pb",
+  "config_name": {
+    "name": "pb_t29_config.json",
+    "code": 29
+  },
+  "data_start_row": 10,
+  "columns": {
+    "code_col": "B",
+    "item_code_col": "B",
+    "item_name_col": "C",
+    "value_cols": {
+      "value": "E"
+    }
+  },
+  "data_types": [
+    {
+      "name": "amount",
+      "label_tg": "маблағ",
+      "label_ru": "сумма",
+      "label_en": "amount",
+      "columns": {"prev_year": "E", "curr_year": "G"}
+    }
+  ],
+  "rules": [
+    {
+      "code": "1",
+      "guid": 1,
+      "expected_name_tg": "Саноати коркард",
+      "expected_name_ru": "Обрабатывающая промышленность",
+      "expected_name_en": "Manufacturing industry",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2",
+      "guid": 2,
+      "expected_name_tg": "Саноати истихроҷи маъдан ва тарҳрезии конҳои рег",
+      "expected_name_ru": "Горнодобывающая промышленность и разработка карьеров",
+      "expected_name_en": "Mining and barrow excavation",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "3",
+      "guid": 3,
+      "expected_name_tg": "Сохтмон",
+      "expected_name_ru": "Строительство",
+      "expected_name_en": "Construction activity",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "4",
+      "guid": 4,
+      "expected_name_tg": "Меҳмонхонаҳо ва тарабхонаҳо",
+      "expected_name_ru": "Гостинично-ресторанное хозяйство",
+      "expected_name_en": "Hotels and restaurants",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "5",
+      "guid": 5,
+      "expected_name_tg": "Тиҷорат",
+      "expected_name_ru": "Торговля",
+      "expected_name_en": "Trade",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "6",
+      "guid": 6,
+      "expected_name_tg": "Транспорт ва коммуникатсион",
+      "expected_name_ru": "Транспорт и коммуникации",
+      "expected_name_en": "Transport and communications",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "7",
+      "guid": 7,
+      "expected_name_tg": "Нақлиёт, хоҷагии анбор ва алоқа",
+      "expected_name_ru": "Транспорт, складское хозяйство и связь",
+      "expected_name_en": "Transport, warehousing and communication",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "8",
+      "guid": 8,
+      "expected_name_tg": "Миёнаравии молиявӣ",
+      "expected_name_ru": "Финансовое посредничество",
+      "expected_name_en": "Financial intermediation",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "9",
+      "guid": 9,
+      "expected_name_tg": "Амалиёт бо амволи ғайраъмол",
+      "expected_name_ru": "Операции с недвижимым имуществом",
+      "expected_name_en": "Operations with real estate",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "10",
+      "guid": 10,
+      "expected_name_tg": "Маориф",
+      "expected_name_ru": "Образование",
+      "expected_name_en": "Education",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "11",
+      "guid": 11,
+      "expected_name_tg": "Дигар",
+      "expected_name_ru": "Другие",
+      "expected_name_en": "Other",
+      "type": "numeric",
+      "nullable": true
+    }
+  ]
+}

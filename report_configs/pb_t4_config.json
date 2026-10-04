@@ -1,0 +1,20 @@
+{
+  "config_name": {
+    "code": "4"
+  },
+  "sheet_name": "pb",
+  "data_start_row": 7,
+  "columns": {
+    "item_name_col": "B",
+    "code_col": "A",
+    "guid_col": null,
+    "year_col": null,
+    "quarter_col": null,
+    "period_col": null,
+    "value_cols": {
+      "prevent_year": "D",
+      "current_year": "E"
+    }
+  },
+  "rules": []
+}

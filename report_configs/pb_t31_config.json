@@ -1,0 +1,80 @@
+{
+  "sheet_name": "pb",
+  "config_name": {
+    "name": "pb_t31_config.json",
+    "code": 31
+  },
+  "data_start_row": 11,
+  "year_row": 6,
+  "columns": {
+    "code_col": "A",
+    "item_code_col": "A",
+    "item_name_col": "B",
+    "value_cols": {
+      "value": "D"
+    }
+  },
+  "data_types": [
+    {
+      "name": "credit",
+      "label_tg": "Кредит",
+      "label_ru": "Кредит",
+      "label_en": "Credit",
+      "columns": {"prev_year": "D", "curr_year": "G"}
+    },
+    {
+      "name": "debit",
+      "label_tg": "Дебет",
+      "label_ru": "Дебет",
+      "label_en": "Debit",
+      "columns": {"prev_year": "E", "curr_year": "H"}
+    }
+  ],
+  "rules": [
+    {
+      "code": "1",
+      "guid": 1,
+      "expected_name_tg": "Активы (+ увеличение, - уменьшение)",
+      "expected_name_ru": "Активы (+ увеличение, - уменьшение)",
+      "expected_name_en": "Assets (+ decrease, - increase)",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.1",
+      "guid": 2,
+      "expected_name_tg": "Наличная иностранная валюта и депозиты",
+      "expected_name_ru": "Наличная иностранная валюта и депозиты",
+      "expected_name_en": "Cash foreign currency and deposits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.1.1",
+      "guid": 3,
+      "expected_name_tg": "Наличная иностранная валюта",
+      "expected_name_ru": "Наличная иностранная валюта",
+      "expected_name_en": "Cash foreign currency",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.1.2",
+      "guid": 4,
+      "expected_name_tg": "Амонатҳо",
+      "expected_name_ru": "Депозиты",
+      "expected_name_en": "Deposits",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "1.2",
+      "guid": 5,
+      "expected_name_tg": "Аблоқҳои хориҷӣ",
+      "expected_name_ru": "Иностранные ценные бумаги",
+      "expected_name_en": "Foreign securities",
+      "type": "numeric",
+      "nullable": true
+    }
+  ]
+}

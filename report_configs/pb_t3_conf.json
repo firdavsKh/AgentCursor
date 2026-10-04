@@ -1,0 +1,242 @@
+{
+  "sheet_name": "pb",
+    "config_name": {
+    "code": "3"
+  },
+  "data_start_row": 7,
+  "columns": {
+    "item_code_col": "A",
+    "item_name_col": "B",
+    "value_cols": {
+      "current_year": "E",
+      "prevent_year": "D"
+    }
+  },
+  "rules": [
+    {
+        "code": "1.",
+        "guid": 1,
+        "expected_name_tg": "Гардиши савдои хориҷӣ**",
+        "expected_name_ru": "Внешнеторговый оборот**",
+        "expected_name_en": "Foreign Trade turnover**",
+        "type": "numeric",
+        "nullable": false
+    },
+    {
+        "code": "1.1.",
+        "guid": 2,
+        "expected_name_tg": "маълумоти расмӣ*",
+        "expected_name_ru": "официальные данные*",
+        "expected_name_en": "official data*",
+        "type": "numeric",
+        "nullable": false
+    },
+    {
+        "code": "1.2.",
+        "guid": 2,
+        "expected_name_tg": "ислоҳот аз рўи фарогирӣ",
+        "expected_name_ru": "поправка по охвату",
+        "expected_name_en": "the amendment on coverage",
+        "type": "numeric",
+        "nullable": true
+    },
+    {
+        "code": "1.3.",
+        "guid": 2,
+        "expected_name_tg": "тасҳеҳ то нархи ФОБ",
+        "expected_name_ru": "корректировка до цен ФОБ",
+        "expected_name_en": "adjustment up to FOB price",
+        "type": "numeric",
+        "nullable": true
+    },
+    {
+        "code": "1.4.",
+        "guid": 2,
+        "expected_name_tg": "тасҳеҳот аз рӯи нарх",
+        "expected_name_ru": "поправка по стоимости",
+        "expected_name_en": "the amendment at cost",
+        "type": "numeric",
+        "nullable": true
+    },
+    {
+        "code": "1.5.",
+        "guid": 2,
+        "expected_name_tg": "дигар",
+        "expected_name_ru": "прочие",
+        "expected_name_en": "others",
+        "type": "numeric",
+        "nullable": true
+    },
+    {
+        "code": "2.",
+        "guid": 3,
+        "expected_name_tg": "Содирот**",
+        "expected_name_ru": "Экспорт**",
+        "expected_name_en": "Export**",
+        "type": "numeric",
+        "nullable": false
+    },
+    {
+        "code": "2.1.",
+        "expected_name_tg": "маълумоти расмӣ*",
+        "expected_name_ru": "официальные данные*",
+        "expected_name_en": "official data*",
+        "type": "numeric",
+        "nullable": false,
+        "guid": 4
+    },
+    {
+        "code": "2.2.",
+        "expected_name_tg": "ислоҳот аз рўи фарогирӣ ",
+        "expected_name_ru": "поправка по охвату",
+        "expected_name_en": "the amendment on coverage",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 5
+    },
+    {
+        "code": "2.3.",
+        "expected_name_tg": "мол барои коркард",
+        "expected_name_ru": "товары на переработку",
+        "expected_name_en": "the goods for processing",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 6
+    },
+    {
+        "code": "2.4.",
+        "expected_name_tg": "дигар",
+        "expected_name_ru": "прочие",
+        "expected_name_en": "others",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 7
+    },
+    {
+        "code": "3.",
+        "expected_name_tg": "Воридот**",
+        "expected_name_ru": "Импорт**",
+        "expected_name_en": "Import**",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 8
+    },
+    {
+        "code": "3.1.",
+        "expected_name_tg": "маълумоти расмӣ*",
+        "expected_name_ru": "официальные данные*",
+        "expected_name_en": "official data*",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 9
+    },
+    {
+        "code": "3.2.",
+        "expected_name_tg": "ислоҳот аз рўи фарогирӣ ",
+        "expected_name_ru": "поправка по охвату",
+        "expected_name_en": "the amendment on coverage",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 10
+    },
+    {
+        "code": "3.3.",
+        "expected_name_tg": "тасҳеҳ то нархи ФОБ",
+        "expected_name_ru": "корректировка до цен ФОБ",
+        "expected_name_en": "adjustment up to FOB price",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 11
+    },
+    {
+        "code": "3.4.",
+        "expected_name_tg": "мол барои коркард",
+        "expected_name_ru": "товары на переработку",
+        "expected_name_en": "the goods for processing",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 12
+    },
+    {
+        "code": "3.5.",
+        "expected_name_tg": "дигар",
+        "expected_name_ru": "прочие",
+        "expected_name_en": "others",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 13
+    },
+    {
+        "code": "4.",
+        "expected_name_tg": "Тавозуни савдо**",
+        "expected_name_ru": "Торговый баланс**",
+        "expected_name_en": "Trade balance**",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 14
+    },
+    {
+        "code": "4.1.",
+        "expected_name_tg": "маълумоти расмӣ*",
+        "expected_name_ru": "официальные данные*",
+        "expected_name_en": "official data*",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 15
+    },
+    {
+        "code": "4.2.",
+        "expected_name_tg": "ислоҳот аз рўи фарогирӣ",
+        "expected_name_ru": "поправка по охвату",
+        "expected_name_en": "the amendment on coverage",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 16
+    },
+    {
+        "code": "4.3.",
+        "expected_name_tg": "тасҳеҳ то нархи ФОБ",
+        "expected_name_ru": "корректировка до цен ФОБ",
+        "expected_name_en": "adjustment up to FOB price",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 17
+    },
+    {
+        "code": "4.4.",
+        "expected_name_tg": "тасҳеҳот аз рӯи нарх",
+        "expected_name_ru": "поправка по стоимости",
+        "expected_name_en": "the amendment at cost",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 18
+    },
+    {
+        "code": "4.5.",
+        "expected_name_tg": "дигар",
+        "expected_name_ru": "прочие",
+        "expected_name_en": "others",
+        "type": "numeric",
+        "nullable": true,
+        "guid": 19
+    },
+    {
+        "code": "* Маълумоти Агентии омори назди Президенти Ҷумҳурии Тоҷикистон",
+        "expected_name_tg": "* Маълумоти Агентии омори назди Президенти Ҷумҳурии Тоҷикистон",
+        "expected_name_ru": "* Данные Статистического агентства при Президенте Республики Таджикистан",
+        "expected_name_en": "* Data from the Statistical Agency under the President of the Republic of Tajikistan",
+        "type": "text",
+        "nullable": true,
+        "guid": 20
+    },
+    {
+        "code": "** Тасҳеҳоти Бонки миллии Тоҷикистон ба маълумоти Агентии омори назди Президенти Ҷумҳурии Тоҷикистон",
+        "expected_name_tg": "** Тасҳеҳоти Бонки миллии Тоҷикистон ба маълумоти Агентии омори назди Президенти Ҷумҳурии Тоҷикистон",
+        "expected_name_ru": "** Корректировки Национального банка Таджикистана к данным Статистического агентства при Президенте РТ",
+        "expected_name_en": "** Adjustments by the National Bank of Tajikistan to the data of the Statistical Agency",
+        "type": "text",
+        "nullable": true,
+        "guid": 21
+    }
+]
+}
