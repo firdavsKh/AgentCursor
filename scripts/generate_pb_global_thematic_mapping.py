@@ -20,7 +20,7 @@ THEME_ORDER = [
     "Income Accounts",
     "Investment & Financial Accounts",
     "Reference / Minimal Templates",
-    "Supplementary Tables",
+    "Others / Supplementary Tables",
 ]
 
 
@@ -79,7 +79,7 @@ def classify_theme(pb_number: int, rules_count: int) -> str:
         return "Investment & Financial Accounts"
     if rules_count <= 1:
         return "Reference / Minimal Templates"
-    return "Supplementary Tables"
+    return "Others / Supplementary Tables"
 
 
 def collect_records(config_dir: Path) -> list[dict]:
@@ -135,23 +135,26 @@ def generate(records: list[dict], config_dir: Path) -> str:
     theme_idx = 0
     for theme in THEME_ORDER:
         members = grouped.get(theme, [])
-        if not members:
-            continue
         theme_idx += 1
         tid = f"th_{theme_idx}"
         lines.append(f'  {tid}["{safe(theme, max_len=120)} ({len(members)})"]')
         for g in global_records:
             lines.append(f"  g_{g['pb']} --> {tid}")
 
-        for member in members:
-            pid = f"pb_{member['pb']}"
-            plabel = (
-                f"PB {member['pb']}: {safe(member['title'], max_len=70)}"
-                f"<br/>rules={member['rules_count']}"
-            )
-            plabel = plabel.replace('"', "'")
-            lines.append(f'  {pid}["{plabel}"]')
-            lines.append(f"  {tid} --> {pid}")
+        if members:
+            for member in members:
+                pid = f"pb_{member['pb']}"
+                plabel = (
+                    f"PB {member['pb']}: {safe(member['title'], max_len=70)}"
+                    f"<br/>rules={member['rules_count']}"
+                )
+                plabel = plabel.replace('"', "'")
+                lines.append(f'  {pid}["{plabel}"]')
+                lines.append(f"  {tid} --> {pid}")
+        else:
+            empty_id = f"th_empty_{theme_idx}"
+            lines.append(f'  {empty_id}["No mapped PB tables"]')
+            lines.append(f"  {tid} --> {empty_id}")
 
     lines.extend(["```", ""])
 
@@ -163,9 +166,7 @@ def generate(records: list[dict], config_dir: Path) -> str:
     for g in global_records:
         for theme in THEME_ORDER:
             members = grouped.get(theme, [])
-            if not members:
-                continue
-            mapped_pbs = ", ".join(f"PB{m['pb']}" for m in members)
+            mapped_pbs = ", ".join(f"PB{m['pb']}" for m in members) if members else "(none)"
             lines.append(
                 "| "
                 + " | ".join(
@@ -186,9 +187,7 @@ def generate(records: list[dict], config_dir: Path) -> str:
     lines.append("|---|---:|---|")
     for theme in THEME_ORDER:
         members = grouped.get(theme, [])
-        if not members:
-            continue
-        pb_list = ", ".join(f"PB{m['pb']}" for m in members)
+        pb_list = ", ".join(f"PB{m['pb']}" for m in members) if members else "(none)"
         lines.append(f"| {md_cell(theme)} | {len(members)} | {md_cell(pb_list)} |")
     lines.append("")
 
