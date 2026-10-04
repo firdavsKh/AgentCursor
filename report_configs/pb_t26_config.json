@@ -1,0 +1,48 @@
+{
+  "sheet_name": "2023-2024",
+  "config_name": {
+    "name": "pb_t26_config.json",
+    "code": 26
+  },
+  "data_start_row": 11,
+  "columns": {
+    "item_code_col": "A",
+    "item_name_col": "A",
+    "value_cols": {
+      "value": "C"
+    }
+  },
+  "data_types": [
+    {
+      "name": "consolidated",
+      "label_tg": "Дар маҷмӯъ  консолид.",
+      "label_ru": "консолидированные",
+      "label_en": "Consolidated",
+      "columns": {
+        "prev_year": "C",
+        "curr_year": "F"
+      }
+    },
+    {
+      "name": "cis_countries",
+      "label_tg": "кишварҳои ИДМ",
+      "label_ru": "страны СНГ",
+      "label_en": "CIS countries",
+      "columns": {
+        "prev_year": "D",
+        "curr_year": "G"
+      }
+    },
+    {
+      "name": "fa_countries",
+      "label_tg": "кишварҳои ХД",
+      "label_ru": "страны ДЗ",
+      "label_en": "FA countries",
+      "columns": {
+        "prev_year": "E",
+        "curr_year": "H"
+      }
+    }
+  ],
+  "rules": []
+}

@@ -1,0 +1,77 @@
+{
+    "conf_list":
+    [
+        {
+            "conf_name": "pb_t1_conf",
+            "table_name":"Brief analytical description of Balance of Payments of the Republic of Tajikistan (in thousand of USD)",
+            "table_number":"1",
+            "path":"/report_configs/pb_t1_conf.json"
+        },
+        {
+            "conf_name": "pb_t2_conf",
+            "table_name":"Brief standard description of Balance of Payments of the Republic of Tajikistan (in thousand of USD)",
+            "table_number":"2",
+            "path":"/report_configs/pb_t2_conf.json"
+        },
+        {
+            "conf_name": "pb_t3_conf",
+            "table_name":"Brief standard description of Balance of Payments of the Republic of Tajikistan (in thousand of USD)",
+            "table_number":"3",
+            "path":"/report_configs/pb_t3_conf.json"
+        },
+        {
+            "conf_name": "pb_t4_conf",
+            "table_name":"Table 4",
+            "table_number":"4",
+            "path":"/report_configs/pb_t4_config.json"
+        },
+        {
+            "conf_name": "pb_t5_conf",
+            "table_name":"Table 5",
+            "table_number":"5",
+            "path":"/report_configs/pb_t5_config.json"
+        },
+        {
+            "conf_name": "pb_t7_conf",
+            "table_name":"Table 7",
+            "table_number":"7",
+            "path":"/report_configs/pb_t7_config.json"
+        },
+        {
+            "conf_name": "pb_t25_conf",
+            "table_name":"Primary income",
+            "table_number":"25",
+            "path":"/report_configs/pb_t25_config.json"
+        },
+        {
+            "conf_name": "pb_t26_conf",
+            "table_name":"Secondary income",
+            "table_number":"26",
+            "path":"/report_configs/pb_t26_config.json"
+        },
+        {
+            "conf_name": "pb_t28_conf",
+            "table_name":"Foreign Direct Investments",
+            "table_number":"28",
+            "path":"/report_configs/pb_t28_config.json"
+        },
+        {
+            "conf_name": "pb_t29_conf",
+            "table_name":"Portfolio Investments",
+            "table_number":"29",
+            "path":"/report_configs/pb_t29_config.json"
+        },
+        {
+            "conf_name": "pb_t31_conf",
+            "table_name":"Other Investments - Assets",
+            "table_number":"31",
+            "path":"/report_configs/pb_t31_config.json"
+        },
+        {
+            "conf_name": "pb_t32_conf",
+            "table_name":"Other Investments - Liabilities",
+            "table_number":"32",
+            "path":"/report_configs/pb_t32_config.json"
+        }
+    ]
+}

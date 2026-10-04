@@ -1,0 +1,140 @@
+{
+  "sheet_name": "pb",
+  "config_name": {
+    "name": "pb_t28_config.json",
+    "code": 28
+  },
+  "data_start_row": 13,
+  "columns": {
+    "code_col": "A",
+    "item_code_col": "A",
+    "item_name_col": "B",
+    "value_cols": {
+      "value": "D"
+    }
+  },
+  "data_types": [
+    {
+      "name": "consolidated",
+      "label_tg": "дар маҷмӯъ",
+      "label_ru": "консолидированный",
+      "label_en": "consolidated",
+      "columns": {"prev_year": "D", "curr_year": "G"}
+    },
+    {
+      "name": "cis_countries",
+      "label_tg": "кишварҳои ИДМ",
+      "label_ru": "страны СНГ",
+      "label_en": "CIS countries",
+      "columns": {"prev_year": "E", "curr_year": "H"}
+    },
+    {
+      "name": "far_abroad",
+      "label_tg": "кишварҳои хориҷии дур",
+      "label_ru": "страны дальнего зарубежья",
+      "label_en": "far abroad countries",
+      "columns": {"prev_year": "F", "curr_year": "I"}
+    }
+  ],
+  "rules": [
+    {
+      "code": "1",
+      "guid": 1,
+      "expected_name_tg": "Прямые инвестиции",
+      "expected_name_ru": "Прямые инвестиции",
+      "expected_name_en": "Direct investments",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2",
+      "guid": 2,
+      "expected_name_tg": "В Республику Таджикистан",
+      "expected_name_ru": "В Республику Таджикистан",
+      "expected_name_en": "in Republic of Tajikistan",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.1",
+      "guid": 3,
+      "expected_name_tg": "Поступление",
+      "expected_name_ru": "Поступление",
+      "expected_name_en": "Proceeds",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.2",
+      "guid": 4,
+      "expected_name_tg": "Отток",
+      "expected_name_ru": "Отток",
+      "expected_name_en": "Outflow",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.3",
+      "guid": 5,
+      "expected_name_tg": "В акционерный капитал",
+      "expected_name_ru": "В акционерный капитал",
+      "expected_name_en": "In share capital",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.3.1",
+      "guid": 6,
+      "expected_name_tg": "Поступление",
+      "expected_name_ru": "Поступление",
+      "expected_name_en": "Proceeds",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.3.2",
+      "guid": 7,
+      "expected_name_tg": "Отток",
+      "expected_name_ru": "Отток",
+      "expected_name_en": "Outflow",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.4",
+      "guid": 8,
+      "expected_name_tg": "Реинвестированные доходы",
+      "expected_name_ru": "Реинвестированные доходы",
+      "expected_name_en": "Reinvested earnings",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.4.1",
+      "guid": 9,
+      "expected_name_tg": "Дебиторский долг",
+      "expected_name_ru": "Задолженность дебиторов",
+      "expected_name_en": "Debtor accounts",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.5",
+      "guid": 10,
+      "expected_name_tg": "Другие инвестиции",
+      "expected_name_ru": "Другие инвестиции",
+      "expected_name_en": "Other investments",
+      "type": "numeric",
+      "nullable": true
+    },
+    {
+      "code": "2.5.1",
+      "guid": 11,
+      "expected_name_tg": "Кредиторский долг",
+      "expected_name_ru": "Задолженность кредиторов",
+      "expected_name_en": "Creditor accounts",
+      "type": "numeric",
+      "nullable": true
+    }
+  ]
+}

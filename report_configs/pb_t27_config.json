@@ -1,0 +1,23 @@
+{
+  "config_name": {
+    "code": "27"
+  },
+  "sheet_name": "pb",
+  "data_start_row": 11,
+  "columns": {
+    "item_name_col": "B",
+    "item_code_col": "A",
+    "data_type": ["weight", "value"],
+    "guid_col": null,
+    "year_col": null,
+    "quarter_col": null,
+    "period_col": null,
+    "value_cols": {
+      "prevent_weight": { "column": "D", "data_type": "weight" },
+      "prevent_value": { "column": "E", "data_type": "value" },
+      "current_weight": { "column": "F", "data_type": "weight" },
+      "current_value": { "column": "G", "data_type": "value" }
+    }
+  },
+  "rules": []
+}
