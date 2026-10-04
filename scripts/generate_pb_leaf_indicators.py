@@ -18,12 +18,7 @@ ROOT = Path("/workspace")
 DATA_DIR = ROOT / "output_files"
 OUTPUT_MD = ROOT / "pb_leaf_indicators.md"
 
-DETAIL_DEPTH = 4
-OVERVIEW_DEPTH = 2
-OVERVIEW_DEPTH_BY_PB = {23: 1}
-MAX_LEAF_CHILDREN = 8
-OVERVIEW_MAX_LEAF_CHILDREN = 4
-MAX_CHILDREN = 12
+MAX_LEAF_CHILDREN = 12
 
 BRANCHES = [
     ("Goods: trade adjustments and trade by country", ["g_adj", "g_cty"]),
@@ -424,28 +419,21 @@ class Diagram:
     def edge(self, parent: str, child: str) -> None:
         self.lines.append(f"  {parent} --> {child}")
 
-    def subtree(self, parent_id: str, node: Node, max_depth: int, max_leaves: int, level: int = 1) -> None:
+    def subtree(self, parent_id: str, node: Node) -> None:
         children = node.children
         if not children:
             return
-        if all(not child.children for child in children) and len(children) > max_leaves:
+        if all(not child.children for child in children) and len(children) > MAX_LEAF_CHILDREN:
             examples = ", ".join(mermaid_text(child.label, 28) for child in children[:3])
             summary = self.new_id(parent_id)
             self.node(summary, f"{len(children)} items<br/>e.g. {examples}, …", "note")
             self.edge(parent_id, summary)
             return
-        for child in children[:MAX_CHILDREN]:
+        for child in children:
             child_id = self.new_id(parent_id)
-            hidden = child.descendants() if level >= max_depth else 0
-            label = mermaid_text(child.label) + (f"<br/>(+{hidden} sub-indicators)" if hidden else "")
-            self.node(child_id, label)
+            self.node(child_id, mermaid_text(child.label))
             self.edge(parent_id, child_id)
-            if level < max_depth:
-                self.subtree(child_id, child, max_depth, max_leaves, level + 1)
-        if len(children) > MAX_CHILDREN:
-            more = self.new_id(parent_id)
-            self.node(more, f"+{len(children) - MAX_CHILDREN} more", "note")
-            self.edge(parent_id, more)
+            self.subtree(child_id, child)
 
 
 def table_measures(table: Table) -> list[str]:
@@ -496,8 +484,7 @@ def overview_diagram(title: str, node_ids: list[str], tables: dict[int, Table]) 
                 start = wrapper = start.children[0]
             diagram.node(pb_id, pb_caption(tables[pb], wrapper), "stadium")
             diagram.edge(node_id, pb_id)
-            depth = OVERVIEW_DEPTH_BY_PB.get(pb, OVERVIEW_DEPTH)
-            diagram.subtree(pb_id, start, depth, OVERVIEW_MAX_LEAF_CHILDREN)
+            diagram.subtree(pb_id, start)
     return [f"### {title}", "", "```mermaid", "flowchart LR", *diagram.lines, "```", ""]
 
 
@@ -506,7 +493,7 @@ def detail_section(table: Table) -> list[str]:
     diagram = Diagram()
     root_id = f"pb{table.pb}"
     diagram.node(root_id, pb_caption(table), "stadium")
-    diagram.subtree(root_id, table.root, DETAIL_DEPTH, MAX_LEAF_CHILDREN)
+    diagram.subtree(root_id, table.root)
 
     measures = table_measures(table)
     lines = [
@@ -567,7 +554,8 @@ def generate() -> str:
         "read from the latest Excel file of each table in `output_files/`.",
         "",
         "- Credit / Debit / Proceeds / Outflow rows are shown as measures of the indicator they belong to.",
-        "- Long lists (countries, commodities) are collapsed in the charts; every indicator is listed in the tables.",
+        "- Charts show every indicator and sub-indicator; only flat lists of more than 12 countries or commodities"
+        " are collapsed (they are listed in full in the tables).",
         "- PB25 and PB26 only carry Russian labels below the first level; they are shown in English (BPM6 terms).",
         "",
         "## Overview by BoP branch",

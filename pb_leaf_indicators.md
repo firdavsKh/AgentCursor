@@ -4,7 +4,7 @@ Row-level indicators of every leaf table in the PB hierarchy (`pb_hierarchy.md`)
 read from the latest Excel file of each table in `output_files/`.
 
 - Credit / Debit / Proceeds / Outflow rows are shown as measures of the indicator they belong to.
-- Long lists (countries, commodities) are collapsed in the charts; every indicator is listed in the tables.
+- Charts show every indicator and sub-indicator; only flat lists of more than 12 countries or commodities are collapsed (they are listed in full in the tables).
 - PB25 and PB26 only carry Russian labels below the first level; they are shown in English (BPM6 terms).
 
 ## Overview by BoP branch
@@ -18,119 +18,291 @@ flowchart LR
   g_adj --> pb3
   pb3_1["foreign trade turnover"]
   pb3 --> pb3_1
-  pb3_1_2>"5 items<br/>e.g. official data, the amendment on coverage, adjustment up to fob price, …"]
+  pb3_1_2["official data"]
   pb3_1 --> pb3_1_2
-  pb3_3["export"]
-  pb3 --> pb3_3
-  pb3_3_4["official data"]
-  pb3_3 --> pb3_3_4
-  pb3_3_5["the amendment on coverage"]
-  pb3_3 --> pb3_3_5
-  pb3_3_6["the goods for processing"]
-  pb3_3 --> pb3_3_6
-  pb3_3_7["others"]
-  pb3_3 --> pb3_3_7
-  pb3_8["import"]
-  pb3 --> pb3_8
-  pb3_8_9>"5 items<br/>e.g. official data, the amendment on coverage, adjustment up to fob price, …"]
-  pb3_8 --> pb3_8_9
-  pb3_10["trade balance"]
-  pb3 --> pb3_10
-  pb3_10_11>"5 items<br/>e.g. official data, the amendment on coverage, adjustment up to fob price, …"]
-  pb3_10 --> pb3_10_11
+  pb3_1_3["the amendment on coverage"]
+  pb3_1 --> pb3_1_3
+  pb3_1_4["adjustment up to fob price"]
+  pb3_1 --> pb3_1_4
+  pb3_1_5["the amendment at cost"]
+  pb3_1 --> pb3_1_5
+  pb3_1_6["others"]
+  pb3_1 --> pb3_1_6
+  pb3_7["export"]
+  pb3 --> pb3_7
+  pb3_7_8["official data"]
+  pb3_7 --> pb3_7_8
+  pb3_7_9["the amendment on coverage"]
+  pb3_7 --> pb3_7_9
+  pb3_7_10["the goods for processing"]
+  pb3_7 --> pb3_7_10
+  pb3_7_11["others"]
+  pb3_7 --> pb3_7_11
+  pb3_12["import"]
+  pb3 --> pb3_12
+  pb3_12_13["official data"]
+  pb3_12 --> pb3_12_13
+  pb3_12_14["the amendment on coverage"]
+  pb3_12 --> pb3_12_14
+  pb3_12_15["adjustment up to fob price"]
+  pb3_12 --> pb3_12_15
+  pb3_12_16["the goods for processing"]
+  pb3_12 --> pb3_12_16
+  pb3_12_17["others"]
+  pb3_12 --> pb3_12_17
+  pb3_18["trade balance"]
+  pb3 --> pb3_18
+  pb3_18_19["official data"]
+  pb3_18 --> pb3_18_19
+  pb3_18_20["the amendment on coverage"]
+  pb3_18 --> pb3_18_20
+  pb3_18_21["adjustment up to fob price"]
+  pb3_18 --> pb3_18_21
+  pb3_18_22["the amendment at cost"]
+  pb3_18 --> pb3_18_22
+  pb3_18_23["others"]
+  pb3_18 --> pb3_18_23
   pb4(["PB4 · Trade balance<br/>per item: 8 measures"])
   g_adj --> pb4
-  pb4_12["CIS"]
-  pb4 --> pb4_12
-  pb4_13["Far abroad countries"]
-  pb4 --> pb4_13
-  pb4_14["Export"]
-  pb4 --> pb4_14
-  pb4_14_15["Aluminum - primary"]
-  pb4_14 --> pb4_14_15
-  pb4_14_16["Cotton fibre"]
-  pb4_14 --> pb4_14_16
-  pb4_14_17["Electricity"]
-  pb4_14 --> pb4_14_17
-  pb4_14_18["Other"]
-  pb4_14 --> pb4_14_18
-  pb4_19["Import CIF"]
-  pb4 --> pb4_19
-  pb4_19_20>"6 items<br/>e.g. Alumina, Oil, Electricity, …"]
-  pb4_19 --> pb4_19_20
+  pb4_24["CIS"]
+  pb4 --> pb4_24
+  pb4_25["Far abroad countries"]
+  pb4 --> pb4_25
+  pb4_26["Export"]
+  pb4 --> pb4_26
+  pb4_26_27["Aluminum - primary"]
+  pb4_26 --> pb4_26_27
+  pb4_26_28["Cotton fibre"]
+  pb4_26 --> pb4_26_28
+  pb4_26_29["Electricity"]
+  pb4_26 --> pb4_26_29
+  pb4_26_30["Other"]
+  pb4_26 --> pb4_26_30
+  pb4_31["Import CIF"]
+  pb4 --> pb4_31
+  pb4_31_32["Alumina"]
+  pb4_31 --> pb4_31_32
+  pb4_31_33["Oil"]
+  pb4_31 --> pb4_31_33
+  pb4_31_34["Electricity"]
+  pb4_31 --> pb4_31_34
+  pb4_31_35["Grain"]
+  pb4_31 --> pb4_31_35
+  pb4_31_36["Flour"]
+  pb4_31 --> pb4_31_36
+  pb4_31_37["Others"]
+  pb4_31 --> pb4_31_37
   g_cty["Trade by country"]
   pb5(["PB5 · Total (Including :)<br/>export · import · surplus"])
   g_cty --> pb5
-  pb5_21["CIS countries"]
-  pb5 --> pb5_21
-  pb5_21_22["EAEU countries<br/>(+5 sub-indicators)"]
-  pb5_21 --> pb5_21_22
-  pb5_21_23["Non EurAseC countries<br/>(+6 sub-indicators)"]
-  pb5_21 --> pb5_21_23
-  pb5_24["Far abroad countries"]
-  pb5 --> pb5_24
-  pb5_24_25["Europa<br/>(+41 sub-indicators)"]
-  pb5_24 --> pb5_24_25
-  pb5_24_26["Asia<br/>(+36 sub-indicators)"]
-  pb5_24 --> pb5_24_26
-  pb5_24_27["America<br/>(+32 sub-indicators)"]
-  pb5_24 --> pb5_24_27
-  pb5_24_28["Africa<br/>(+25 sub-indicators)"]
-  pb5_24 --> pb5_24_28
-  pb5_24_29["Australia Ocenia<br/>(+2 sub-indicators)"]
-  pb5_24 --> pb5_24_29
+  pb5_38["CIS countries"]
+  pb5 --> pb5_38
+  pb5_38_39["EAEU countries"]
+  pb5_38 --> pb5_38_39
+  pb5_38_39_40["Belarus"]
+  pb5_38_39 --> pb5_38_39_40
+  pb5_38_39_41["Kazakhstan"]
+  pb5_38_39 --> pb5_38_39_41
+  pb5_38_39_42["Kyrgyzstan"]
+  pb5_38_39 --> pb5_38_39_42
+  pb5_38_39_43["Russia"]
+  pb5_38_39 --> pb5_38_39_43
+  pb5_38_39_44["Is free-economic zone"]
+  pb5_38_39 --> pb5_38_39_44
+  pb5_38_45["Non EurAseC countries"]
+  pb5_38 --> pb5_38_45
+  pb5_38_45_46["Azerbaijan"]
+  pb5_38_45 --> pb5_38_45_46
+  pb5_38_45_47["Armenia"]
+  pb5_38_45 --> pb5_38_45_47
+  pb5_38_45_48["Moldova"]
+  pb5_38_45 --> pb5_38_45_48
+  pb5_38_45_49["Turkmenistan"]
+  pb5_38_45 --> pb5_38_45_49
+  pb5_38_45_50["Uzbekistan"]
+  pb5_38_45 --> pb5_38_45_50
+  pb5_38_45_51["Ukraine"]
+  pb5_38_45 --> pb5_38_45_51
+  pb5_52["Far abroad countries"]
+  pb5 --> pb5_52
+  pb5_52_53["Europa"]
+  pb5_52 --> pb5_52_53
+  pb5_52_53_54>"41 items<br/>e.g. Austria, Albania, Andorra, …"]
+  pb5_52_53 --> pb5_52_53_54
+  pb5_52_55["Asia"]
+  pb5_52 --> pb5_52_55
+  pb5_52_55_56>"36 items<br/>e.g. Afghanistan, Bangladesh, Brunei, …"]
+  pb5_52_55 --> pb5_52_55_56
+  pb5_52_57["America"]
+  pb5_52 --> pb5_52_57
+  pb5_52_57_58>"32 items<br/>e.g. Anguilla, Argentina, Belize, …"]
+  pb5_52_57 --> pb5_52_57_58
+  pb5_52_59["Africa"]
+  pb5_52 --> pb5_52_59
+  pb5_52_59_60>"25 items<br/>e.g. Djibouti, Niger, Egypt, …"]
+  pb5_52_59 --> pb5_52_59_60
+  pb5_52_61["Australia Ocenia"]
+  pb5_52 --> pb5_52_61
+  pb5_52_61_62["Australia"]
+  pb5_52_61 --> pb5_52_61_62
+  pb5_52_61_63["New Zealand"]
+  pb5_52_61 --> pb5_52_61_63
   pb6(["PB6 · Total (Including :)<br/>export · import · surplus"])
   g_cty --> pb6
-  pb6_30["CIS countries"]
-  pb6 --> pb6_30
-  pb6_30_31["EAEU countries<br/>(+5 sub-indicators)"]
-  pb6_30 --> pb6_30_31
-  pb6_30_32["Non EurAseC countries<br/>(+6 sub-indicators)"]
-  pb6_30 --> pb6_30_32
-  pb6_33["Far abroad countries"]
-  pb6 --> pb6_33
-  pb6_33_34["Europa<br/>(+41 sub-indicators)"]
-  pb6_33 --> pb6_33_34
-  pb6_33_35["Asia<br/>(+36 sub-indicators)"]
-  pb6_33 --> pb6_33_35
-  pb6_33_36["America<br/>(+32 sub-indicators)"]
-  pb6_33 --> pb6_33_36
-  pb6_33_37["Africa<br/>(+24 sub-indicators)"]
-  pb6_33 --> pb6_33_37
-  pb6_33_38["Australia Ocenia<br/>(+2 sub-indicators)"]
-  pb6_33 --> pb6_33_38
+  pb6_64["CIS countries"]
+  pb6 --> pb6_64
+  pb6_64_65["EAEU countries"]
+  pb6_64 --> pb6_64_65
+  pb6_64_65_66["Belarus"]
+  pb6_64_65 --> pb6_64_65_66
+  pb6_64_65_67["Kazakhstan"]
+  pb6_64_65 --> pb6_64_65_67
+  pb6_64_65_68["Kyrgyzstan"]
+  pb6_64_65 --> pb6_64_65_68
+  pb6_64_65_69["Russia"]
+  pb6_64_65 --> pb6_64_65_69
+  pb6_64_65_70["Is free-economic zone"]
+  pb6_64_65 --> pb6_64_65_70
+  pb6_64_71["Non EurAseC countries"]
+  pb6_64 --> pb6_64_71
+  pb6_64_71_72["Azerbaijan"]
+  pb6_64_71 --> pb6_64_71_72
+  pb6_64_71_73["Armenia"]
+  pb6_64_71 --> pb6_64_71_73
+  pb6_64_71_74["Moldova"]
+  pb6_64_71 --> pb6_64_71_74
+  pb6_64_71_75["Turkmenistan"]
+  pb6_64_71 --> pb6_64_71_75
+  pb6_64_71_76["Uzbekistan"]
+  pb6_64_71 --> pb6_64_71_76
+  pb6_64_71_77["Ukraine"]
+  pb6_64_71 --> pb6_64_71_77
+  pb6_78["Far abroad countries"]
+  pb6 --> pb6_78
+  pb6_78_79["Europa"]
+  pb6_78 --> pb6_78_79
+  pb6_78_79_80>"41 items<br/>e.g. Austria, Albania, Andorra, …"]
+  pb6_78_79 --> pb6_78_79_80
+  pb6_78_81["Asia"]
+  pb6_78 --> pb6_78_81
+  pb6_78_81_82>"36 items<br/>e.g. Afghanistan, Bangladesh, Brunei, …"]
+  pb6_78_81 --> pb6_78_81_82
+  pb6_78_83["America"]
+  pb6_78 --> pb6_78_83
+  pb6_78_83_84>"32 items<br/>e.g. Anguilla, Argentina, Belize, …"]
+  pb6_78_83 --> pb6_78_83_84
+  pb6_78_85["Africa"]
+  pb6_78 --> pb6_78_85
+  pb6_78_85_86>"24 items<br/>e.g. Djibouti, Niger, Egypt, …"]
+  pb6_78_85 --> pb6_78_85_86
+  pb6_78_87["Australia Ocenia"]
+  pb6_78 --> pb6_78_87
+  pb6_78_87_88["Australia"]
+  pb6_78_87 --> pb6_78_87_88
+  pb6_78_87_89["New Zealand"]
+  pb6_78_87 --> pb6_78_87_89
   pb24(["PB24 · Total (Including:)<br/>export · import"])
   g_cty --> pb24
-  pb24_39["CIS countries"]
-  pb24 --> pb24_39
-  pb24_39_40["EAEU countries<br/>(+4 sub-indicators)"]
-  pb24_39 --> pb24_39_40
-  pb24_39_41["Non EurAsEC countries<br/>(+7 sub-indicators)"]
-  pb24_39 --> pb24_39_41
-  pb24_42["Far abroad countries"]
-  pb24 --> pb24_42
-  pb24_42_43["Europa<br/>(+32 sub-indicators)"]
-  pb24_42 --> pb24_42_43
-  pb24_42_44["Asia<br/>(+32 sub-indicators)"]
-  pb24_42 --> pb24_42_44
-  pb24_42_45["America<br/>(+12 sub-indicators)"]
-  pb24_42 --> pb24_42_45
-  pb24_42_46["Africa<br/>(+14 sub-indicators)"]
-  pb24_42 --> pb24_42_46
-  pb24_42_47["Australia Ocenia<br/>(+2 sub-indicators)"]
-  pb24_42 --> pb24_42_47
-  pb24_48["Other countries"]
-  pb24 --> pb24_48
+  pb24_90["CIS countries"]
+  pb24 --> pb24_90
+  pb24_90_91["EAEU countries"]
+  pb24_90 --> pb24_90_91
+  pb24_90_91_92["Belarus"]
+  pb24_90_91 --> pb24_90_91_92
+  pb24_90_91_93["Kazakhstan"]
+  pb24_90_91 --> pb24_90_91_93
+  pb24_90_91_94["Kyrgyzstan"]
+  pb24_90_91 --> pb24_90_91_94
+  pb24_90_91_95["Russia"]
+  pb24_90_91 --> pb24_90_91_95
+  pb24_90_96["Non EurAsEC countries"]
+  pb24_90 --> pb24_90_96
+  pb24_90_96_97["Azerbaijan"]
+  pb24_90_96 --> pb24_90_96_97
+  pb24_90_96_98["Armenia"]
+  pb24_90_96 --> pb24_90_96_98
+  pb24_90_96_99["Georgia"]
+  pb24_90_96 --> pb24_90_96_99
+  pb24_90_96_100["Moldova"]
+  pb24_90_96 --> pb24_90_96_100
+  pb24_90_96_101["Turkmenistan"]
+  pb24_90_96 --> pb24_90_96_101
+  pb24_90_96_102["Uzbekistan"]
+  pb24_90_96 --> pb24_90_96_102
+  pb24_90_96_103["Ukraine"]
+  pb24_90_96 --> pb24_90_96_103
+  pb24_104["Far abroad countries"]
+  pb24 --> pb24_104
+  pb24_104_105["Europa"]
+  pb24_104 --> pb24_104_105
+  pb24_104_105_106>"32 items<br/>e.g. Austria, Albania, Belgium, …"]
+  pb24_104_105 --> pb24_104_105_106
+  pb24_104_107["Asia"]
+  pb24_104 --> pb24_104_107
+  pb24_104_107_108>"32 items<br/>e.g. Afghanistan, Bangladesh, Bahrain, …"]
+  pb24_104_107 --> pb24_104_107_108
+  pb24_104_109["America"]
+  pb24_104 --> pb24_104_109
+  pb24_104_109_110["Anguilla"]
+  pb24_104_109 --> pb24_104_109_110
+  pb24_104_109_111["Argentina"]
+  pb24_104_109 --> pb24_104_109_111
+  pb24_104_109_112["Brazil"]
+  pb24_104_109 --> pb24_104_109_112
+  pb24_104_109_113["Venezuela"]
+  pb24_104_109 --> pb24_104_109_113
+  pb24_104_109_114["Canada"]
+  pb24_104_109 --> pb24_104_109_114
+  pb24_104_109_115["Colombia"]
+  pb24_104_109 --> pb24_104_109_115
+  pb24_104_109_116["Mexico"]
+  pb24_104_109 --> pb24_104_109_116
+  pb24_104_109_117["Panama"]
+  pb24_104_109 --> pb24_104_109_117
+  pb24_104_109_118["Peru"]
+  pb24_104_109 --> pb24_104_109_118
+  pb24_104_109_119["USA"]
+  pb24_104_109 --> pb24_104_109_119
+  pb24_104_109_120["Chile"]
+  pb24_104_109 --> pb24_104_109_120
+  pb24_104_109_121["Eastern Samoa"]
+  pb24_104_109 --> pb24_104_109_121
+  pb24_104_122["Africa"]
+  pb24_104 --> pb24_104_122
+  pb24_104_122_123>"14 items<br/>e.g. Zambia, Morocco, Mauritania, …"]
+  pb24_104_122 --> pb24_104_122_123
+  pb24_104_124["Australia Ocenia"]
+  pb24_104 --> pb24_104_124
+  pb24_104_124_125["Australia"]
+  pb24_104_124 --> pb24_104_124_125
+  pb24_104_124_126["New Zealand"]
+  pb24_104_124 --> pb24_104_124_126
+  pb24_127["Other countries"]
+  pb24 --> pb24_127
   pb27(["PB27 · Total<br/>cost, thous. USD · weight"])
   g_cty --> pb27
-  pb27_49["Near abroad countries including"]
-  pb27 --> pb27_49
-  pb27_49_50>"8 items<br/>e.g. Kazakhstan, Kyrgyzstan, Russia, …"]
-  pb27_49 --> pb27_49_50
-  pb27_51["Far abroad countries including"]
-  pb27 --> pb27_51
-  pb27_51_52>"75 items<br/>e.g. Latvia, Germany, United States of America, …"]
-  pb27_51 --> pb27_51_52
+  pb27_128["Near abroad countries including"]
+  pb27 --> pb27_128
+  pb27_128_129["Kazakhstan"]
+  pb27_128 --> pb27_128_129
+  pb27_128_130["Kyrgyzstan"]
+  pb27_128 --> pb27_128_130
+  pb27_128_131["Russia"]
+  pb27_128 --> pb27_128_131
+  pb27_128_132["Uzbekistan"]
+  pb27_128 --> pb27_128_132
+  pb27_128_133["Ukraine"]
+  pb27_128 --> pb27_128_133
+  pb27_128_134["Turkmenistan"]
+  pb27_128 --> pb27_128_134
+  pb27_128_135["Belarus"]
+  pb27_128 --> pb27_128_135
+  pb27_128_136["Azerbaijan"]
+  pb27_128 --> pb27_128_136
+  pb27_137["Far abroad countries including"]
+  pb27 --> pb27_137
+  pb27_137_138>"75 items<br/>e.g. Latvia, Germany, United States of America, …"]
+  pb27_137 --> pb27_137_138
 ```
 
 ### Goods: exports by commodity
@@ -144,32 +316,80 @@ flowchart LR
   pb7 --> pb7_1
   pb9(["PB9 · Total on import"])
   g_exp --> pb9
-  pb9_2>"10 items<br/>e.g. HS 0703 (name missing in so…, Carrot, turnip, beet and ot…, Dried bean vegetables, …"]
+  pb9_2["HS 0703 (name missing in source)"]
   pb9 --> pb9_2
+  pb9_3["Carrot, turnip, beet and other vegetables"]
+  pb9 --> pb9_3
+  pb9_4["Dried bean vegetables"]
+  pb9 --> pb9_4
+  pb9_5["Other nuts"]
+  pb9 --> pb9_5
+  pb9_6["Grapes"]
+  pb9 --> pb9_6
+  pb9_7["Dried fruits"]
+  pb9 --> pb9_7
+  pb9_8["Peanut"]
+  pb9 --> pb9_8
+  pb9_9["Sunflower seeds"]
+  pb9 --> pb9_9
+  pb9_10["Locust beans, freestones"]
+  pb9 --> pb9_10
+  pb9_11["Other goods"]
+  pb9 --> pb9_11
   pb11(["PB11 · Total on export"])
   g_exp --> pb11
-  pb11_3>"20 items<br/>e.g. Grapes, Fresh fruits, Dried fruits, …"]
-  pb11 --> pb11_3
+  pb11_12>"20 items<br/>e.g. Grapes, Fresh fruits, Dried fruits, …"]
+  pb11 --> pb11_12
   pb13(["PB13 · Total on export"])
   g_exp --> pb13
-  pb13_4>"15 items<br/>e.g. HS 0805 (name missing in so…, Zink ore and its precipitat…, Mineral coal, brignettes, …"]
-  pb13 --> pb13_4
+  pb13_13>"15 items<br/>e.g. HS 0805 (name missing in so…, Zink ore and its precipitat…, Mineral coal, brignettes, …"]
+  pb13 --> pb13_13
   pb15(["PB15 · Total on export"])
   g_exp --> pb15
-  pb15_5>"15 items<br/>e.g. Cabbage, cauliflower and ot…, Carrot, turnip, beet and ot…, Grapes, …"]
-  pb15 --> pb15_5
+  pb15_14>"15 items<br/>e.g. Cabbage, cauliflower and ot…, Carrot, turnip, beet and ot…, Grapes, …"]
+  pb15 --> pb15_14
   pb17(["PB17 · Total on export"])
   g_exp --> pb17
-  pb17_6>"7 items<br/>e.g. Other fresh or dried nuts, Locust beans, freestones, Skin from horned cattle ski…, …"]
-  pb17 --> pb17_6
+  pb17_15["Other fresh or dried nuts"]
+  pb17 --> pb17_15
+  pb17_16["Locust beans, freestones"]
+  pb17 --> pb17_16
+  pb17_17["Skin from horned cattle skins"]
+  pb17 --> pb17_17
+  pb17_18["Cotton fibre"]
+  pb17 --> pb17_18
+  pb17_19["Cotton yarn containing 85 % of cotton"]
+  pb17 --> pb17_19
+  pb17_20["Aluminum - primary"]
+  pb17 --> pb17_20
+  pb17_21["Other goods"]
+  pb17 --> pb17_21
   pb19(["PB19 · Total on export"])
   g_exp --> pb19
-  pb19_7>"5 items<br/>e.g. HS 5201 (name missing in so…, Cotton yarn containing 85 %…, Fluid-flow pump, …"]
-  pb19 --> pb19_7
+  pb19_22["HS 5201 (name missing in source)"]
+  pb19 --> pb19_22
+  pb19_23["Cotton yarn containing 85 % of cotton"]
+  pb19 --> pb19_23
+  pb19_24["Fluid-flow pump"]
+  pb19 --> pb19_24
+  pb19_25["Air or airfree pump"]
+  pb19 --> pb19_25
+  pb19_26["Other goods"]
+  pb19 --> pb19_26
   pb21(["PB21 · Total on export"])
   g_exp --> pb21
-  pb21_8>"6 items<br/>e.g. HS 2607 (name missing in so…, HS 2608 (name missing in so…, Cotton fibre, …"]
-  pb21 --> pb21_8
+  pb21_27["HS 2607 (name missing in source)"]
+  pb21 --> pb21_27
+  pb21_28["HS 2608 (name missing in source)"]
+  pb21 --> pb21_28
+  pb21_29["Cotton fibre"]
+  pb21 --> pb21_29
+  pb21_30["Cotton yarn containing 85 % of cotton"]
+  pb21 --> pb21_30
+  pb21_31["Surma"]
+  pb21 --> pb21_31
+  pb21_32["Other goods"]
+  pb21 --> pb21_32
 ```
 
 ### Goods: commodity sections and imports by commodity
@@ -219,30 +439,196 @@ flowchart LR
   serv["1.2 Services"]
   pb23(["PB23<br/>Credit / Debit"])
   serv --> pb23
-  pb23_1["Manufactoring services on physical inputs owned by others<br/>(+3 sub-indicators)"]
+  pb23_1["Manufactoring services on physical inputs owned by others"]
   pb23 --> pb23_1
-  pb23_2["Maintenance and repair services n.i.e."]
-  pb23 --> pb23_2
-  pb23_3["Transport<br/>(+34 sub-indicators)"]
-  pb23 --> pb23_3
-  pb23_4["Travel<br/>(+15 sub-indicators)"]
-  pb23 --> pb23_4
-  pb23_5["Construction<br/>(+2 sub-indicators)"]
+  pb23_1_2["Goods for services"]
+  pb23_1 --> pb23_1_2
+  pb23_1_3["goods for processing in the Republic of Tajikistan"]
+  pb23_1 --> pb23_1_3
+  pb23_1_4["goods for processing abroad"]
+  pb23_1 --> pb23_1_4
+  pb23_5["Maintenance and repair services n.i.e."]
   pb23 --> pb23_5
-  pb23_6["Insurance and pension services<br/>(+5 sub-indicators)"]
+  pb23_6["Transport"]
   pb23 --> pb23_6
-  pb23_7["Financial services<br/>(+2 sub-indicators)"]
-  pb23 --> pb23_7
-  pb23_8["Charges for the use of intellectual property n.i.e."]
-  pb23 --> pb23_8
-  pb23_9["Telecommunications, computer, and information services<br/>(+3 sub-indicators)"]
-  pb23 --> pb23_9
-  pb23_10["Other business services<br/>(+14 sub-indicators)"]
-  pb23 --> pb23_10
-  pb23_11["Personal, cultural, and recreational services<br/>(+2 sub-indicators)"]
-  pb23 --> pb23_11
-  pb23_12["Government goods and services n.i.e.<br/>(+3 sub-indicators)"]
-  pb23 --> pb23_12
+  pb23_6_7["Rail transport"]
+  pb23_6 --> pb23_6_7
+  pb23_6_7_8["passenger"]
+  pb23_6_7 --> pb23_6_7_8
+  pb23_6_7_8_9["payable by border, seasonal and other short-term workers"]
+  pb23_6_7_8 --> pb23_6_7_8_9
+  pb23_6_7_10["freight"]
+  pb23_6_7 --> pb23_6_7_10
+  pb23_6_7_11["other"]
+  pb23_6_7 --> pb23_6_7_11
+  pb23_6_12["Motor transport"]
+  pb23_6 --> pb23_6_12
+  pb23_6_12_13["passenger"]
+  pb23_6_12 --> pb23_6_12_13
+  pb23_6_12_13_14["payable by border, seasonal and other short-term workers"]
+  pb23_6_12_13 --> pb23_6_12_13_14
+  pb23_6_12_15["freight"]
+  pb23_6_12 --> pb23_6_12_15
+  pb23_6_12_16["other"]
+  pb23_6_12 --> pb23_6_12_16
+  pb23_6_17["Air transport"]
+  pb23_6 --> pb23_6_17
+  pb23_6_17_18["passenger"]
+  pb23_6_17 --> pb23_6_17_18
+  pb23_6_17_18_19["payable by border, seasonal and other short-term workers"]
+  pb23_6_17_18 --> pb23_6_17_18_19
+  pb23_6_17_20["freight"]
+  pb23_6_17 --> pb23_6_17_20
+  pb23_6_17_21["other"]
+  pb23_6_17 --> pb23_6_17_21
+  pb23_6_22["Sea transport"]
+  pb23_6 --> pb23_6_22
+  pb23_6_22_23["passenger"]
+  pb23_6_22 --> pb23_6_22_23
+  pb23_6_22_23_24["payable by border, seasonal and other short-term workers"]
+  pb23_6_22_23 --> pb23_6_22_23_24
+  pb23_6_22_25["freight"]
+  pb23_6_22 --> pb23_6_22_25
+  pb23_6_22_26["other"]
+  pb23_6_22 --> pb23_6_22_26
+  pb23_6_27["Pipeline transportation"]
+  pb23_6 --> pb23_6_27
+  pb23_6_27_28["freight"]
+  pb23_6_27 --> pb23_6_27_28
+  pb23_6_27_29["other"]
+  pb23_6_27 --> pb23_6_27_29
+  pb23_6_30["other modes of transport"]
+  pb23_6 --> pb23_6_30
+  pb23_6_30_31["passenger"]
+  pb23_6_30 --> pb23_6_30_31
+  pb23_6_30_31_32["payable by border, seasonal and other short-term workers"]
+  pb23_6_30_31 --> pb23_6_30_31_32
+  pb23_6_30_33["freight"]
+  pb23_6_30 --> pb23_6_30_33
+  pb23_6_30_34["other"]
+  pb23_6_30 --> pb23_6_30_34
+  pb23_6_35["Postal and courier services"]
+  pb23_6 --> pb23_6_35
+  pb23_6_36["For all modes of transport"]
+  pb23_6 --> pb23_6_36
+  pb23_6_36_37["passenger"]
+  pb23_6_36 --> pb23_6_36_37
+  pb23_6_36_37_38["payable by border, seasonal and other short-term workers"]
+  pb23_6_36_37 --> pb23_6_36_37_38
+  pb23_6_36_39["freight"]
+  pb23_6_36 --> pb23_6_36_39
+  pb23_6_36_40["other"]
+  pb23_6_36 --> pb23_6_36_40
+  pb23_41["Travel"]
+  pb23 --> pb23_41
+  pb23_41_42["Business"]
+  pb23_41 --> pb23_41_42
+  pb23_41_42_43["Acquisition of goods and services by border, seasonal, and…"]
+  pb23_41_42 --> pb23_41_42_43
+  pb23_41_42_44["Other"]
+  pb23_41_42 --> pb23_41_42_44
+  pb23_41_45["Personal"]
+  pb23_41 --> pb23_41_45
+  pb23_41_45_46["Health-related"]
+  pb23_41_45 --> pb23_41_45_46
+  pb23_41_45_47["Education-related"]
+  pb23_41_45 --> pb23_41_45_47
+  pb23_41_45_48["Other"]
+  pb23_41_45 --> pb23_41_45_48
+  pb23_41_45_48_49["For both business and personal travel"]
+  pb23_41_45_48 --> pb23_41_45_48_49
+  pb23_41_45_48_50["Goods"]
+  pb23_41_45_48 --> pb23_41_45_48_50
+  pb23_41_45_48_51["Local transport services"]
+  pb23_41_45_48 --> pb23_41_45_48_51
+  pb23_41_45_48_52["Accommodation services"]
+  pb23_41_45_48 --> pb23_41_45_48_52
+  pb23_41_45_48_53["Food-serving services"]
+  pb23_41_45_48 --> pb23_41_45_48_53
+  pb23_41_45_48_54["other services"]
+  pb23_41_45_48 --> pb23_41_45_48_54
+  pb23_41_45_48_55["of which: health services"]
+  pb23_41_45_48 --> pb23_41_45_48_55
+  pb23_41_45_48_56["of which: education services"]
+  pb23_41_45_48 --> pb23_41_45_48_56
+  pb23_57["Construction"]
+  pb23 --> pb23_57
+  pb23_57_58["Construction abroad"]
+  pb23_57 --> pb23_57_58
+  pb23_57_59["Construction in the Repablic of Tajikistan"]
+  pb23_57 --> pb23_57_59
+  pb23_60["Insurance and pension services"]
+  pb23 --> pb23_60
+  pb23_60_61["Direct insurance"]
+  pb23_60 --> pb23_60_61
+  pb23_60_62["Reinsurance"]
+  pb23_60 --> pb23_60_62
+  pb23_60_63["Auxiliary insurance services"]
+  pb23_60 --> pb23_60_63
+  pb23_60_64["Pension and standardized guarantee services"]
+  pb23_60 --> pb23_60_64
+  pb23_60_65["Other"]
+  pb23_60 --> pb23_60_65
+  pb23_66["Financial services"]
+  pb23 --> pb23_66
+  pb23_66_67["Explicitly charged and other financial services"]
+  pb23_66 --> pb23_66_67
+  pb23_66_68["Financial intermediation services indirectly measured (FISI…"]
+  pb23_66 --> pb23_66_68
+  pb23_69["Charges for the use of intellectual property n.i.e."]
+  pb23 --> pb23_69
+  pb23_70["Telecommunications, computer, and information services"]
+  pb23 --> pb23_70
+  pb23_70_71["Telecommunications services"]
+  pb23_70 --> pb23_70_71
+  pb23_70_72["Computer services"]
+  pb23_70 --> pb23_70_72
+  pb23_70_73["Information services"]
+  pb23_70 --> pb23_70_73
+  pb23_74["Other business services"]
+  pb23 --> pb23_74
+  pb23_74_75["Research and development services"]
+  pb23_74 --> pb23_74_75
+  pb23_74_76["Professional and management consulting services"]
+  pb23_74 --> pb23_74_76
+  pb23_74_76_77["Legal services"]
+  pb23_74_76 --> pb23_74_76_77
+  pb23_74_76_78["Accounting services"]
+  pb23_74_76 --> pb23_74_76_78
+  pb23_74_76_79["Services in management sphere"]
+  pb23_74_76 --> pb23_74_76_79
+  pb23_74_76_80["Advertismentm, marketing"]
+  pb23_74_76 --> pb23_74_76_80
+  pb23_74_76_81["Other"]
+  pb23_74_76 --> pb23_74_76_81
+  pb23_74_82["Technical, related with trade and other services"]
+  pb23_74 --> pb23_74_82
+  pb23_74_82_83["Architectual, engeneering and other technical services"]
+  pb23_74_82 --> pb23_74_82_83
+  pb23_74_82_84["Waste utilization, environmental conrol"]
+  pb23_74_82 --> pb23_74_82_84
+  pb23_74_82_85["Servieces in minerals industry sphere"]
+  pb23_74_82 --> pb23_74_82_85
+  pb23_74_82_86["Operative leasing services"]
+  pb23_74_82 --> pb23_74_82_86
+  pb23_74_82_87["trade related services (now on-selling)"]
+  pb23_74_82 --> pb23_74_82_87
+  pb23_74_82_88["Other"]
+  pb23_74_82 --> pb23_74_82_88
+  pb23_89["Personal, cultural, and recreational services"]
+  pb23 --> pb23_89
+  pb23_89_90["Audiovisual and related services"]
+  pb23_89 --> pb23_89_90
+  pb23_89_91["Other personal, cultural, and recreational services"]
+  pb23_89 --> pb23_89_91
+  pb23_92["Government goods and services n.i.e."]
+  pb23 --> pb23_92
+  pb23_92_93["Goods and services delivered or received by embasses, milit…"]
+  pb23_92 --> pb23_92_93
+  pb23_92_94["Other services delivered or received by government"]
+  pb23_92 --> pb23_92_94
+  pb23_92_95["Tourism-related services in travel and passenger transport"]
+  pb23_92 --> pb23_92_95
 ```
 
 ### Primary and secondary income
@@ -256,31 +642,85 @@ flowchart LR
   pb25 --> pb25_1
   pb25_2["Investment income"]
   pb25 --> pb25_2
-  pb25_2_3["Direct investment<br/>(+6 sub-indicators)"]
+  pb25_2_3["Direct investment"]
   pb25_2 --> pb25_2_3
-  pb25_2_4["Portfolio investment<br/>(+5 sub-indicators)"]
-  pb25_2 --> pb25_2_4
-  pb25_2_5["Other investment<br/>(+1 sub-indicators)"]
-  pb25_2 --> pb25_2_5
-  pb25_2_6["Reserve assets<br/>(+1 sub-indicators)"]
-  pb25_2 --> pb25_2_6
+  pb25_2_3_4["Income on equity and investment fund shares"]
+  pb25_2_3 --> pb25_2_3_4
+  pb25_2_3_4_5["Dividends and withdrawals from income of quasi-corporations…"]
+  pb25_2_3_4 --> pb25_2_3_4_5
+  pb25_2_3_4_5_6["Direct investor in direct investment enterprises"]
+  pb25_2_3_4_5 --> pb25_2_3_4_5_6
+  pb25_2_3_4_7["Reinvested earnings (D43D)"]
+  pb25_2_3_4 --> pb25_2_3_4_7
+  pb25_2_3_8["Interest"]
+  pb25_2_3 --> pb25_2_3_8
+  pb25_2_3_8_9["Direct investor in direct investment enterprises"]
+  pb25_2_3_8 --> pb25_2_3_8_9
+  pb25_2_10["Portfolio investment"]
+  pb25_2 --> pb25_2_10
+  pb25_2_10_11["Investment income on equity and investment fund shares"]
+  pb25_2_10 --> pb25_2_10_11
+  pb25_2_10_11_12["Investment income attributable to investment fund sharehold…"]
+  pb25_2_10_11 --> pb25_2_10_11_12
+  pb25_2_10_11_12_13["Dividends"]
+  pb25_2_10_11_12 --> pb25_2_10_11_12_13
+  pb25_2_10_14["Interest (implied by row codes)"]
+  pb25_2_10 --> pb25_2_10_14
+  pb25_2_10_14_15["Long-term"]
+  pb25_2_10_14 --> pb25_2_10_14_15
+  pb25_2_16["Other investment"]
+  pb25_2 --> pb25_2_16
+  pb25_2_16_17["Interest (D41O)"]
+  pb25_2_16 --> pb25_2_16_17
+  pb25_2_18["Reserve assets"]
+  pb25_2 --> pb25_2_18
+  pb25_2_18_19["Interest (D41R)"]
+  pb25_2_18 --> pb25_2_18_19
   si["3. Secondary income"]
   pb26(["PB26<br/>Credit / Debit<br/>CIS · consolidated · far abroad"])
   si --> pb26
-  pb26_7["General government"]
-  pb26 --> pb26_7
-  pb26_7_8["Social benefits"]
-  pb26_7 --> pb26_7_8
-  pb26_7_9["Current international cooperation<br/>(+3 sub-indicators)"]
-  pb26_7 --> pb26_7_9
-  pb26_7_10["Miscellaneous current transfers of general government<br/>(+1 sub-indicators)"]
-  pb26_7 --> pb26_7_10
-  pb26_11["Financial corporations, nonfinancial corporations, househol…"]
-  pb26 --> pb26_11
-  pb26_11_12["Personal transfers (current transfers between resident and…<br/>(+1 sub-indicators)"]
-  pb26_11 --> pb26_11_12
-  pb26_11_13["Other current transfers<br/>(+9 sub-indicators)"]
-  pb26_11 --> pb26_11_13
+  pb26_20["General government"]
+  pb26 --> pb26_20
+  pb26_20_21["Social benefits"]
+  pb26_20 --> pb26_20_21
+  pb26_20_22["Current international cooperation"]
+  pb26_20 --> pb26_20_22
+  pb26_20_22_23["Humanitarian aid"]
+  pb26_20_22 --> pb26_20_22_23
+  pb26_20_22_24["Technical assistance"]
+  pb26_20_22 --> pb26_20_22_24
+  pb26_20_22_25["Contributions to international organizations"]
+  pb26_20_22 --> pb26_20_22_25
+  pb26_20_26["Miscellaneous current transfers of general government"]
+  pb26_20 --> pb26_20_26
+  pb26_20_26_27["Other"]
+  pb26_20_26 --> pb26_20_26_27
+  pb26_28["Financial corporations, nonfinancial corporations, househol…"]
+  pb26 --> pb26_28
+  pb26_28_29["Personal transfers (current transfers between resident and…"]
+  pb26_28 --> pb26_28_29
+  pb26_28_29_30["Workers' remittances"]
+  pb26_28_29 --> pb26_28_29_30
+  pb26_28_31["Other current transfers"]
+  pb26_28 --> pb26_28_31
+  pb26_28_31_32["Current taxes on income, wealth, etc."]
+  pb26_28_31 --> pb26_28_31_32
+  pb26_28_31_33["Social contributions"]
+  pb26_28_31 --> pb26_28_31_33
+  pb26_28_31_34["Social benefits"]
+  pb26_28_31 --> pb26_28_31_34
+  pb26_28_31_35["Net non-life insurance premiums"]
+  pb26_28_31 --> pb26_28_31_35
+  pb26_28_31_36["Non-life insurance claims"]
+  pb26_28_31 --> pb26_28_31_36
+  pb26_28_31_37["Current international cooperation"]
+  pb26_28_31 --> pb26_28_31_37
+  pb26_28_31_38["Miscellaneous current transfers"]
+  pb26_28_31 --> pb26_28_31_38
+  pb26_28_31_38_39["Current transfers to NPISHs"]
+  pb26_28_31_38 --> pb26_28_31_38_39
+  pb26_28_31_38_40["Gifts"]
+  pb26_28_31_38 --> pb26_28_31_38_40
 ```
 
 ### Financial account
@@ -298,61 +738,109 @@ flowchart LR
   pb28_2 --> pb28_2_3
   pb28_2_4["Reinvested earnings"]
   pb28_2 --> pb28_2_4
-  pb28_2_5["Other capital<br/>(+1 sub-indicators)"]
+  pb28_2_5["Other capital"]
   pb28_2 --> pb28_2_5
+  pb28_2_5_6["Credit from direct investments"]
+  pb28_2_5 --> pb28_2_5_6
   pb30(["PB30 · Total including<br/>share % · sum"])
   di --> pb30
-  pb30_6["CIS countries"]
-  pb30 --> pb30_6
-  pb30_6_7>"5 items<br/>e.g. Azerbaijan, Armeniya, Kazakhstan, …"]
-  pb30_6 --> pb30_6_7
-  pb30_8["Far abroad countries"]
-  pb30 --> pb30_8
-  pb30_8_9>"22 items<br/>e.g. Austria, Avstralia, Great Britain, …"]
-  pb30_8 --> pb30_8_9
+  pb30_7["CIS countries"]
+  pb30 --> pb30_7
+  pb30_7_8["Azerbaijan"]
+  pb30_7 --> pb30_7_8
+  pb30_7_9["Armeniya"]
+  pb30_7 --> pb30_7_9
+  pb30_7_10["Kazakhstan"]
+  pb30_7 --> pb30_7_10
+  pb30_7_11["Kyrgyzstan"]
+  pb30_7 --> pb30_7_11
+  pb30_7_12["Russia"]
+  pb30_7 --> pb30_7_12
+  pb30_13["Far abroad countries"]
+  pb30 --> pb30_13
+  pb30_13_14>"22 items<br/>e.g. Austria, Avstralia, Great Britain, …"]
+  pb30_13 --> pb30_13_14
   pf["5. Portfolio investment"]
   pb29(["PB29 · Total including<br/>amount"])
   pf --> pb29
-  pb29_10>"11 items<br/>e.g. Manufacturing industry, Mining and barrow excavation, Construction activity, …"]
-  pb29 --> pb29_10
+  pb29_15["Manufacturing industry"]
+  pb29 --> pb29_15
+  pb29_16["Mining and barrow excavation"]
+  pb29 --> pb29_16
+  pb29_17["Construction activity"]
+  pb29 --> pb29_17
+  pb29_18["Hotels and restaurant"]
+  pb29 --> pb29_18
+  pb29_19["Wholesale and retail trade; cars maintenance, retail of fue…"]
+  pb29 --> pb29_19
+  pb29_20["Agriculture,hunting and forestry"]
+  pb29 --> pb29_20
+  pb29_21["Transport, warehousing and communication"]
+  pb29 --> pb29_21
+  pb29_22["Financial intermediation"]
+  pb29 --> pb29_22
+  pb29_23["Operations with real assets, lease and commercial activity"]
+  pb29 --> pb29_23
+  pb29_24["Education"]
+  pb29 --> pb29_24
+  pb29_25["Other"]
+  pb29 --> pb29_25
   oi_a["7.1 Assets"]
   pb31(["PB31 · Assets (+ decrease, - increase)<br/>credit · debit"])
   oi_a --> pb31
-  pb31_11["Cash foreign currency and deposits"]
-  pb31 --> pb31_11
-  pb31_11_12["Cash foreign currency<br/>(+3 sub-indicators)"]
-  pb31_11 --> pb31_11_12
-  pb31_11_13["Operating accounts and short deposit<br/>(+3 sub-indicators)"]
-  pb31_11 --> pb31_11_13
-  pb31_14["Commercial loans and prepayments"]
-  pb31 --> pb31_14
-  pb31_15["Attracted borrowings and lendings (non overdue)"]
-  pb31 --> pb31_15
-  pb31_15_16["Banking sector"]
-  pb31_15 --> pb31_15_16
-  pb31_17["Other assets"]
-  pb31 --> pb31_17
+  pb31_26["Cash foreign currency and deposits"]
+  pb31 --> pb31_26
+  pb31_26_27["Cash foreign currency"]
+  pb31_26 --> pb31_26_27
+  pb31_26_27_28["Central bank"]
+  pb31_26_27 --> pb31_26_27_28
+  pb31_26_27_29["Deposit-taking corporations, except the central bank"]
+  pb31_26_27 --> pb31_26_27_29
+  pb31_26_27_30["Other sectors"]
+  pb31_26_27 --> pb31_26_27_30
+  pb31_26_31["Operating accounts and short deposit"]
+  pb31_26 --> pb31_26_31
+  pb31_26_31_32["Central bank"]
+  pb31_26_31 --> pb31_26_31_32
+  pb31_26_31_33["Deposit-taking corporations, except the central bank"]
+  pb31_26_31 --> pb31_26_31_33
+  pb31_26_31_34["Other sectors"]
+  pb31_26_31 --> pb31_26_31_34
+  pb31_35["Commercial loans and prepayments"]
+  pb31 --> pb31_35
+  pb31_36["Attracted borrowings and lendings (non overdue)"]
+  pb31 --> pb31_36
+  pb31_36_37["Banking sector"]
+  pb31_36 --> pb31_36_37
+  pb31_38["Other assets"]
+  pb31 --> pb31_38
   oi_l["7.2 Liabilities"]
   pb32(["PB32 · Liability (+increase;- decrease)<br/>credit · debit"])
   oi_l --> pb32
-  pb32_18["Currency and deposits"]
-  pb32 --> pb32_18
-  pb32_18_19["Operating accounts and short deposit<br/>(+3 sub-indicators)"]
-  pb32_18 --> pb32_18_19
-  pb32_20["Commercial loans and prepayments"]
-  pb32 --> pb32_20
-  pb32_21["Attracted borrowings and lendings (non overdue)"]
-  pb32 --> pb32_21
-  pb32_21_22["Sector of public administration"]
-  pb32_21 --> pb32_21_22
-  pb32_21_23["Central bank"]
-  pb32_21 --> pb32_21_23
-  pb32_21_24["Deposit-taking corporations, except the central bank"]
-  pb32_21 --> pb32_21_24
-  pb32_21_25["Other sectors"]
-  pb32_21 --> pb32_21_25
-  pb32_26["Other liabilities"]
-  pb32 --> pb32_26
+  pb32_39["Currency and deposits"]
+  pb32 --> pb32_39
+  pb32_39_40["Operating accounts and short deposit"]
+  pb32_39 --> pb32_39_40
+  pb32_39_40_41["Central Bank"]
+  pb32_39_40 --> pb32_39_40_41
+  pb32_39_40_42["Deposit-taking corporations, except the central bank"]
+  pb32_39_40 --> pb32_39_40_42
+  pb32_39_40_43["Other sektors"]
+  pb32_39_40 --> pb32_39_40_43
+  pb32_44["Commercial loans and prepayments"]
+  pb32 --> pb32_44
+  pb32_45["Attracted borrowings and lendings (non overdue)"]
+  pb32 --> pb32_45
+  pb32_45_46["Sector of public administration"]
+  pb32_45 --> pb32_45_46
+  pb32_45_47["Central bank"]
+  pb32_45 --> pb32_45_47
+  pb32_45_48["Deposit-taking corporations, except the central bank"]
+  pb32_45 --> pb32_45_48
+  pb32_45_49["Other sectors"]
+  pb32_45 --> pb32_45_49
+  pb32_50["Other liabilities"]
+  pb32 --> pb32_50
 ```
 
 ## Leaf tables
@@ -1023,20 +1511,42 @@ flowchart LR
   pb24_1_16_19 --> pb24_1_16_19_20
   pb24_1_16_21["America"]
   pb24_1_16 --> pb24_1_16_21
-  pb24_1_16_21_22>"12 items<br/>e.g. Anguilla, Argentina, Brazil, …"]
+  pb24_1_16_21_22["Anguilla"]
   pb24_1_16_21 --> pb24_1_16_21_22
-  pb24_1_16_23["Africa"]
-  pb24_1_16 --> pb24_1_16_23
-  pb24_1_16_23_24>"14 items<br/>e.g. Zambia, Morocco, Mauritania, …"]
-  pb24_1_16_23 --> pb24_1_16_23_24
-  pb24_1_16_25["Australia Ocenia"]
-  pb24_1_16 --> pb24_1_16_25
-  pb24_1_16_25_26["Australia"]
-  pb24_1_16_25 --> pb24_1_16_25_26
-  pb24_1_16_25_27["New Zealand"]
-  pb24_1_16_25 --> pb24_1_16_25_27
-  pb24_1_28["Other countries"]
-  pb24_1 --> pb24_1_28
+  pb24_1_16_21_23["Argentina"]
+  pb24_1_16_21 --> pb24_1_16_21_23
+  pb24_1_16_21_24["Brazil"]
+  pb24_1_16_21 --> pb24_1_16_21_24
+  pb24_1_16_21_25["Venezuela"]
+  pb24_1_16_21 --> pb24_1_16_21_25
+  pb24_1_16_21_26["Canada"]
+  pb24_1_16_21 --> pb24_1_16_21_26
+  pb24_1_16_21_27["Colombia"]
+  pb24_1_16_21 --> pb24_1_16_21_27
+  pb24_1_16_21_28["Mexico"]
+  pb24_1_16_21 --> pb24_1_16_21_28
+  pb24_1_16_21_29["Panama"]
+  pb24_1_16_21 --> pb24_1_16_21_29
+  pb24_1_16_21_30["Peru"]
+  pb24_1_16_21 --> pb24_1_16_21_30
+  pb24_1_16_21_31["USA"]
+  pb24_1_16_21 --> pb24_1_16_21_31
+  pb24_1_16_21_32["Chile"]
+  pb24_1_16_21 --> pb24_1_16_21_32
+  pb24_1_16_21_33["Eastern Samoa"]
+  pb24_1_16_21 --> pb24_1_16_21_33
+  pb24_1_16_34["Africa"]
+  pb24_1_16 --> pb24_1_16_34
+  pb24_1_16_34_35>"14 items<br/>e.g. Zambia, Morocco, Mauritania, …"]
+  pb24_1_16_34 --> pb24_1_16_34_35
+  pb24_1_16_36["Australia Ocenia"]
+  pb24_1_16 --> pb24_1_16_36
+  pb24_1_16_36_37["Australia"]
+  pb24_1_16_36 --> pb24_1_16_36_37
+  pb24_1_16_36_38["New Zealand"]
+  pb24_1_16_36 --> pb24_1_16_36_38
+  pb24_1_39["Other countries"]
+  pb24_1 --> pb24_1_39
 ```
 
 <details>
@@ -1345,8 +1855,26 @@ flowchart LR
   pb9(["PB9"])
   pb9_1["Total on import"]
   pb9 --> pb9_1
-  pb9_1_2>"10 items<br/>e.g. HS 0703 (name missing in so…, Carrot, turnip, beet and ot…, Dried bean vegetables, …"]
+  pb9_1_2["HS 0703 (name missing in source)"]
   pb9_1 --> pb9_1_2
+  pb9_1_3["Carrot, turnip, beet and other vegetables"]
+  pb9_1 --> pb9_1_3
+  pb9_1_4["Dried bean vegetables"]
+  pb9_1 --> pb9_1_4
+  pb9_1_5["Other nuts"]
+  pb9_1 --> pb9_1_5
+  pb9_1_6["Grapes"]
+  pb9_1 --> pb9_1_6
+  pb9_1_7["Dried fruits"]
+  pb9_1 --> pb9_1_7
+  pb9_1_8["Peanut"]
+  pb9_1 --> pb9_1_8
+  pb9_1_9["Sunflower seeds"]
+  pb9_1 --> pb9_1_9
+  pb9_1_10["Locust beans, freestones"]
+  pb9_1 --> pb9_1_10
+  pb9_1_11["Other goods"]
+  pb9_1 --> pb9_1_11
 ```
 
 <details>
@@ -2628,32 +3156,36 @@ flowchart LR
   pb25_2 --> pb25_2_3
   pb25_2_3_4["Income on equity and investment fund shares"]
   pb25_2_3 --> pb25_2_3_4
-  pb25_2_3_4_5["Dividends and withdrawals from income of quasi-corporations…<br/>(+1 sub-indicators)"]
+  pb25_2_3_4_5["Dividends and withdrawals from income of quasi-corporations…"]
   pb25_2_3_4 --> pb25_2_3_4_5
-  pb25_2_3_4_6["Reinvested earnings (D43D)"]
-  pb25_2_3_4 --> pb25_2_3_4_6
-  pb25_2_3_7["Interest"]
-  pb25_2_3 --> pb25_2_3_7
-  pb25_2_3_7_8["Direct investor in direct investment enterprises"]
-  pb25_2_3_7 --> pb25_2_3_7_8
-  pb25_2_9["Portfolio investment"]
-  pb25_2 --> pb25_2_9
-  pb25_2_9_10["Investment income on equity and investment fund shares"]
-  pb25_2_9 --> pb25_2_9_10
-  pb25_2_9_10_11["Investment income attributable to investment fund sharehold…<br/>(+1 sub-indicators)"]
-  pb25_2_9_10 --> pb25_2_9_10_11
-  pb25_2_9_12["Interest (implied by row codes)"]
-  pb25_2_9 --> pb25_2_9_12
-  pb25_2_9_12_13["Long-term"]
-  pb25_2_9_12 --> pb25_2_9_12_13
-  pb25_2_14["Other investment"]
-  pb25_2 --> pb25_2_14
-  pb25_2_14_15["Interest (D41O)"]
-  pb25_2_14 --> pb25_2_14_15
-  pb25_2_16["Reserve assets"]
+  pb25_2_3_4_5_6["Direct investor in direct investment enterprises"]
+  pb25_2_3_4_5 --> pb25_2_3_4_5_6
+  pb25_2_3_4_7["Reinvested earnings (D43D)"]
+  pb25_2_3_4 --> pb25_2_3_4_7
+  pb25_2_3_8["Interest"]
+  pb25_2_3 --> pb25_2_3_8
+  pb25_2_3_8_9["Direct investor in direct investment enterprises"]
+  pb25_2_3_8 --> pb25_2_3_8_9
+  pb25_2_10["Portfolio investment"]
+  pb25_2 --> pb25_2_10
+  pb25_2_10_11["Investment income on equity and investment fund shares"]
+  pb25_2_10 --> pb25_2_10_11
+  pb25_2_10_11_12["Investment income attributable to investment fund sharehold…"]
+  pb25_2_10_11 --> pb25_2_10_11_12
+  pb25_2_10_11_12_13["Dividends"]
+  pb25_2_10_11_12 --> pb25_2_10_11_12_13
+  pb25_2_10_14["Interest (implied by row codes)"]
+  pb25_2_10 --> pb25_2_10_14
+  pb25_2_10_14_15["Long-term"]
+  pb25_2_10_14 --> pb25_2_10_14_15
+  pb25_2_16["Other investment"]
   pb25_2 --> pb25_2_16
-  pb25_2_16_17["Interest (D41R)"]
+  pb25_2_16_17["Interest (D41O)"]
   pb25_2_16 --> pb25_2_16_17
+  pb25_2_18["Reserve assets"]
+  pb25_2 --> pb25_2_18
+  pb25_2_18_19["Interest (D41R)"]
+  pb25_2_18 --> pb25_2_18_19
 ```
 
 <details>
@@ -2889,8 +3421,28 @@ flowchart LR
   pb29(["PB29<br/>amount"])
   pb29_1["Total including"]
   pb29 --> pb29_1
-  pb29_1_2>"11 items<br/>e.g. Manufacturing industry, Mining and barrow excavation, Construction activity, …"]
+  pb29_1_2["Manufacturing industry"]
   pb29_1 --> pb29_1_2
+  pb29_1_3["Mining and barrow excavation"]
+  pb29_1 --> pb29_1_3
+  pb29_1_4["Construction activity"]
+  pb29_1 --> pb29_1_4
+  pb29_1_5["Hotels and restaurant"]
+  pb29_1 --> pb29_1_5
+  pb29_1_6["Wholesale and retail trade; cars maintenance, retail of fue…"]
+  pb29_1 --> pb29_1_6
+  pb29_1_7["Agriculture,hunting and forestry"]
+  pb29_1 --> pb29_1_7
+  pb29_1_8["Transport, warehousing and communication"]
+  pb29_1 --> pb29_1_8
+  pb29_1_9["Financial intermediation"]
+  pb29_1 --> pb29_1_9
+  pb29_1_10["Operations with real assets, lease and commercial activity"]
+  pb29_1 --> pb29_1_10
+  pb29_1_11["Education"]
+  pb29_1 --> pb29_1_11
+  pb29_1_12["Other"]
+  pb29_1 --> pb29_1_12
 ```
 
 <details>
